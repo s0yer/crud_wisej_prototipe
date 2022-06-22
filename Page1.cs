@@ -1,8 +1,10 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Data.SqlClient;
 using Wisej.Web;
-
+using System.IO;
+using System.Configuration;
+using System.Data;
+using MySqlCommand = MySql.Data.MySqlClient.MySqlCommand;
 
 namespace crud_wisej_prototipe
 {
@@ -17,18 +19,33 @@ namespace crud_wisej_prototipe
             InitializeComponent();
         }
 
-        
+        static void exe_luck_num()
+        {
+            MessageBox.Show("metodo roda luck num");
+        }
 
-        private void button1_Click(object sender, System.EventArgs e)
+
+        static void create_log(string data)
+        {
+            //verificar parte do codigo
+            string writeText = data;  // Create a text string
+            File.WriteAllText("log.txt", writeText);  // Create a file and write the content of writeText to it
+
+            string readText = File.ReadAllText("log.txt");  // Read the contents of the file
+            Console.WriteLine(readText);  // Output the content
+        }
+
+
+
+        private void button1_Click(object sender, EventArgs e)
         {
             int numero_sorte = rd.Next(55, 5555);
-            luck_max= Math.Max(numero_sorte, luck_max);
-
-        MessageBox.Show($"O numero da sorte e {numero_sorte}" +  $"\nNumero de bilhetes retirados {num}" + $"\nSorte maxima foi {luck_max}");
-
+            luck_max = Math.Max(numero_sorte, luck_max);
+            MessageBox.Show($"O numero da sorte e {numero_sorte}" + $"\nNumero de bilhetes retirados {num}" + $"\nSorte maxima foi {luck_max}");
             num++;
         }
 
+        //botao numero da sorte
         private void button2_Click(object sender, EventArgs e)
         {
             try
@@ -36,45 +53,121 @@ namespace crud_wisej_prototipe
                 if (luck_max > 54)
                 {
                     MessageBox.Show($"\n Parabens numero da sorte esta dentro dos parametros {luck_max}");
-
                 }
-
             }
             catch
             {
-                MessageBox.Show($"Rode primeiro o numero da sorte.");
-
+                MessageBox.Show($"Rode primeiro o numero da sorte. :)");
             }
-
             novaWindow nw = new novaWindow();
             nw.Show();
-
-
-
         }
 
+        // popula database
         private void button3_Click(object sender, EventArgs e)
         {
             try
             {
-                using (MySqlConnection cnn = new MySqlConnection())
-                {
-                    //pode passar o ip no server
-                    //porta padrao 3306
-                    cnn.ConnectionString = "server=localhost;database=randnum;uid=root;pwd=123456;port=3306";
-                    cnn.Open();
-                    MessageBox.Show($"Conexao com o mysql OK");
-                }
+                string myConnectionString = "server=localhost;database=mydb;uid=root;password=123456;port=3306;";
+                var conn = new MySql.Data.MySqlClient.MySqlConnection(myConnectionString);
+                conn.Open();
+                // conexao aberta -----------
 
+                //gera objeto aleatorio
+                Random rd = new Random();
+
+                // loop que popula tabela com numeros aleatorios
+                // insere 10 valores aleatorios
+                int i = 0;
+                while (i < 10)
+                {
+                    int crazy_number = rd.Next(55, 5555);
+                    String InsertCliente = ($"INSERT INTO lucknumber (numero) VALUES({crazy_number})");
+                    MySqlCommand cmd = new MySqlCommand(InsertCliente, conn);
+                    if (cmd.ExecuteNonQuery() == 1)
+                    {
+                        Console.WriteLine($"\nDado Inserido: {crazy_number}");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erros - Dados nao Inseridos");
+                    }
+                    i++;
+                }
+                MessageBox.Show("Dados Inseridos");
+                conn.Close();
             }
-            //erro acontece a partir de aqui
-            catch (Exception ex)
+            catch (MySql.Data.MySqlClient.MySqlException ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
+        }
+
+
+        // testa database
+        private void button4_Click(object sender, EventArgs e)
+        {
+            {
+                string myConnectionString = "server=localhost;database=mydb;uid=root;password=123456;port=3306;";
+
+                try
+                {
+                    var conn = new MySql.Data.MySqlClient.MySqlConnection(myConnectionString);
+                    conn.Open();
+                    MessageBox.Show($"Conexao com sucesso");
+                }
+                catch (MySql.Data.MySqlClient.MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        //salva txt
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string writeText = "Hello World!";  // Create a text string
+            File.WriteAllText("filename.txt", writeText);  // Create a file and write the content of writeText to it
+
+            string readText = File.ReadAllText("filename.txt");  // Read the contents of the file
+            Console.WriteLine(readText);  // Output the content
+        }
+
+        // mostra dados em terminal
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+            string myConnectionString = "server=localhost;database=mydb;uid=root;password=123456;port=3306;";
+
+            try
+            {
+                var conn = new MySql.Data.MySqlClient.MySqlConnection(myConnectionString);
+                conn.Open();
+                MessageBox.Show($"Conexao com sucesso");
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+                        //MessageBox.Show("Successfully login");
+                        //dataGridView1.DataSource = numeros;
+                        //label1.Text = numeros.ToString();
+                    
+ 
+        }
+
+        private void Page1_Load(object sender, EventArgs e)
+        {
+            //MySqlConnection conn = new MySqlConnection("server=localhost;database=mydb;uid=root;password=123456;port=3306;");
+            //MySqlDataAdapter mda = new MySqlDataAdapter("SHOW DATABASES;", conn);
+
+            //conn.Open();
+
 
         }
-    }
 
+    }
 }
 

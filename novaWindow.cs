@@ -17,7 +17,8 @@ namespace crud_wisej_prototipe
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            MessageBox.Show(((MonthCalendar)sender).SelectionStart.ToString(), "data selecionada e: ");
+            var dataMomento = dateTimePicker1.Value;
+            MessageBox.Show($"a data selecionada e {dataMomento}");
         }
     }
 }
