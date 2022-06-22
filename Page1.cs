@@ -19,13 +19,14 @@ namespace crud_wisej_prototipe
             InitializeComponent();
         }
 
+        // a ser implementado
         static void exe_luck_num()
         {
             MessageBox.Show("metodo roda luck num");
         }
 
 
-        static void create_log(string data)
+        static void Cria_Log(string data)
         {
             //verificar parte do codigo
             string writeText = data;  // Create a text string
@@ -37,7 +38,7 @@ namespace crud_wisej_prototipe
 
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Botao_GeraNumeroSorte(object sender, EventArgs e)
         {
             int numero_sorte = rd.Next(55, 5555);
             luck_max = Math.Max(numero_sorte, luck_max);
@@ -46,7 +47,7 @@ namespace crud_wisej_prototipe
         }
 
         //botao numero da sorte
-        private void button2_Click(object sender, EventArgs e)
+        private void Botao_TestaSorte(object sender, EventArgs e)
         {
             try
             {
@@ -64,7 +65,7 @@ namespace crud_wisej_prototipe
         }
 
         // popula database
-        private void button3_Click(object sender, EventArgs e)
+        private void Botao_PopulaTabela(object sender, EventArgs e)
         {
             try
             {
@@ -105,7 +106,7 @@ namespace crud_wisej_prototipe
 
 
         // testa database
-        private void button4_Click(object sender, EventArgs e)
+        private void Botao_TestaConexao(object sender, EventArgs e)
         {
             {
                 string myConnectionString = "server=localhost;database=mydb;uid=root;password=123456;port=3306;";
@@ -124,7 +125,7 @@ namespace crud_wisej_prototipe
         }
 
         //salva txt
-        private void button5_Click(object sender, EventArgs e)
+        private void Botao_SalvaTxt(object sender, EventArgs e)
         {
             string writeText = "Hello World!";  // Create a text string
             File.WriteAllText("filename.txt", writeText);  // Create a file and write the content of writeText to it
@@ -134,7 +135,7 @@ namespace crud_wisej_prototipe
         }
 
         // mostra dados em terminal
-        private void button7_Click(object sender, EventArgs e)
+        private void Botao_MostraDBTerminal(object sender, EventArgs e)
         {
 
             string myConnectionString = "server=localhost;database=mydb;uid=root;password=123456;port=3306;";
@@ -168,6 +169,10 @@ namespace crud_wisej_prototipe
 
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

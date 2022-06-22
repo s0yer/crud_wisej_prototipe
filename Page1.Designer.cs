@@ -70,63 +70,64 @@
             this.button1.Size = new System.Drawing.Size(136, 37);
             this.button1.TabIndex = 1;
             this.button1.Text = "Numero da Sorte :3";
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Botao_GeraNumeroSorte);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(73, 178);
+            this.button2.Location = new System.Drawing.Point(52, 244);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 37);
             this.button2.TabIndex = 2;
             this.button2.Text = "Escolha o dia";
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Botao_TestaSorte);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(52, 308);
+            this.button3.Location = new System.Drawing.Point(52, 310);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(146, 35);
             this.button3.TabIndex = 3;
             this.button3.Text = "Popula database";
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.Botao_PopulaTabela);
             // 
             // button4
             // 
             this.button4.AutoSize = true;
-            this.button4.Location = new System.Drawing.Point(52, 244);
+            this.button4.Location = new System.Drawing.Point(52, 441);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(164, 37);
+            this.button4.Size = new System.Drawing.Size(205, 46);
             this.button4.TabIndex = 5;
             this.button4.Text = "Testa Conexao Database";
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.Botao_TestaConexao);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(73, 546);
+            this.button5.Location = new System.Drawing.Point(52, 517);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(100, 37);
             this.button5.TabIndex = 6;
             this.button5.Text = "Salva .Txt";
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.Click += new System.EventHandler(this.Botao_SalvaTxt);
             // 
             // button7
             // 
             this.button7.AutoSize = true;
-            this.button7.Location = new System.Drawing.Point(44, 368);
+            this.button7.Location = new System.Drawing.Point(52, 372);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(169, 37);
             this.button7.TabIndex = 8;
             this.button7.Text = "Mostra database Terminal";
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.button7.Click += new System.EventHandler(this.Botao_MostraDBTerminal);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(378, 255);
+            this.label1.Location = new System.Drawing.Point(67, 170);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 15);
+            this.label1.Size = new System.Drawing.Size(59, 15);
             this.label1.TabIndex = 9;
-            this.label1.Text = "label1";
+            this.label1.Text = "Flag Test";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dataGridView1
             // 
@@ -134,7 +135,7 @@
             this.numeros});
             this.dataGridView1.Location = new System.Drawing.Point(470, 160);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(200, 299);
+            this.dataGridView1.Size = new System.Drawing.Size(412, 525);
             this.dataGridView1.TabIndex = 10;
             // 
             // numeros
@@ -157,7 +158,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Name = "Page1";
-            this.Size = new System.Drawing.Size(1404, 493);
+            this.Size = new System.Drawing.Size(1868, 892);
             this.Load += new System.EventHandler(this.Page1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
