@@ -5,6 +5,7 @@ using System.IO;
 using System.Configuration;
 using System.Data;
 using MySqlCommand = MySql.Data.MySqlClient.MySqlCommand;
+using Humanizer;
 
 namespace crud_wisej_prototipe
 {
@@ -26,15 +27,7 @@ namespace crud_wisej_prototipe
         }
 
 
-        static void Cria_Log(string data)
-        {
-            //verificar parte do codigo
-            string writeText = data;  // Create a text string
-            File.WriteAllText("log.txt", writeText);  // Create a file and write the content of writeText to it
 
-            string readText = File.ReadAllText("log.txt");  // Read the contents of the file
-            Console.WriteLine(readText);  // Output the content
-        }
 
 
 
@@ -77,13 +70,27 @@ namespace crud_wisej_prototipe
                 //gera objeto aleatorio
                 Random rd = new Random();
 
+
+
                 // loop que popula tabela com numeros aleatorios
                 // insere 10 valores aleatorios
                 int i = 0;
                 while (i < 10)
                 {
+
                     int crazy_number = rd.Next(55, 5555);
-                    String InsertCliente = ($"INSERT INTO lucknumber (numero) VALUES({crazy_number})");
+
+                    DateTime dataInstante = DateTime.Now;
+                    DateTime apenasData = DateTime.Today;
+
+                    string.Format("select convert(dataInstante, '{0:s}'", DateTime.Now);
+
+                    DateTime dataTratada = DateTimeExtensions.ToClientTime(dataInstante); // o slq nao consegue entender o formato desse jeito
+                    MessageBox.Show("O tempo Voa: " + dataTratada + " | " + dataInstante + " | " + apenasData);
+
+                    //String InsertCliente = ($"INSERT INTO lucknumber (numero, datetime) VALUES({crazy_number}, convert(dataTratada,'18-06-12 10:34:09 PM',5))");
+                    String InsertCliente = ($"INSERT INTO lucknumber (numero, datetime) VALUES({crazy_number}, 'dataInstante')");
+
                     MySqlCommand cmd = new MySqlCommand(InsertCliente, conn);
                     if (cmd.ExecuteNonQuery() == 1)
                     {
@@ -127,11 +134,8 @@ namespace crud_wisej_prototipe
         //salva txt
         private void Botao_SalvaTxt(object sender, EventArgs e)
         {
-            string writeText = "Hello World!";  // Create a text string
-            File.WriteAllText("filename.txt", writeText);  // Create a file and write the content of writeText to it
-
-            string readText = File.ReadAllText("filename.txt");  // Read the contents of the file
-            Console.WriteLine(readText);  // Output the content
+            ExportaDados exportar = new ExportaDados();
+            exportar.ExportaTxt();
         }
 
         // mostra dados em terminal

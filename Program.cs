@@ -1,3 +1,5 @@
+using System;
+using System.IO;
 using Wisej.Web;
 
 namespace crud_wisej_prototipe
@@ -9,6 +11,7 @@ namespace crud_wisej_prototipe
         /// </summary>
         static void Main()
         {
+            
             Application.MainPage = new Page1();
         }
 
