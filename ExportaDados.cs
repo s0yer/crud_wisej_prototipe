@@ -6,9 +6,6 @@ namespace crud_wisej_prototipe
 {
     public class ExportaDados
     {
-
-
-
         public void ExportaTxt()
         {
             // usa sistemIO

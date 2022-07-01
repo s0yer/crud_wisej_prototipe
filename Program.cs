@@ -9,9 +9,10 @@ namespace crud_wisej_prototipe
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// 
+
         static void Main()
         {
-            
             Application.MainPage = new Page1();
         }
 
@@ -23,4 +24,5 @@ namespace crud_wisej_prototipe
         //{
         //}
     }
+
 }

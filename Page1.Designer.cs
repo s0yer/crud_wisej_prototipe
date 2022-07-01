@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new Wisej.Web.Panel();
+            this.Botao_Auxiliar = new Wisej.Web.Button();
             this.comboBox1 = new Wisej.Web.ComboBox();
             this.button1 = new Wisej.Web.Button();
             this.button2 = new Wisej.Web.Button();
@@ -47,19 +48,29 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromName("@controlDark");
             this.panel1.BorderStyle = Wisej.Web.BorderStyle.Solid;
+            this.panel1.Controls.Add(this.Botao_Auxiliar);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.HeaderSize = 34;
             this.panel1.Location = new System.Drawing.Point(16, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1434, 90);
+            this.panel1.Size = new System.Drawing.Size(1829, 90);
             this.panel1.TabIndex = 0;
+            // 
+            // Botao_Auxiliar
+            // 
+            this.Botao_Auxiliar.Location = new System.Drawing.Point(511, 21);
+            this.Botao_Auxiliar.Name = "Botao_Auxiliar";
+            this.Botao_Auxiliar.Size = new System.Drawing.Size(100, 37);
+            this.Botao_Auxiliar.TabIndex = 11;
+            this.Botao_Auxiliar.Text = "Auxiliar";
+            this.Botao_Auxiliar.Click += new System.EventHandler(this.button6_Click);
             // 
             // comboBox1
             // 
             this.comboBox1.LabelText = "Recover";
-            this.comboBox1.Location = new System.Drawing.Point(1048, 29);
+            this.comboBox1.Location = new System.Drawing.Point(1507, 21);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(120, 42);
+            this.comboBox1.Size = new System.Drawing.Size(120, 53);
             this.comboBox1.TabIndex = 9;
             // 
             // button1
@@ -124,7 +135,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(67, 170);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 15);
+            this.label1.Size = new System.Drawing.Size(55, 18);
             this.label1.TabIndex = 9;
             this.label1.Text = "Flag Test";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -146,7 +157,7 @@
             // 
             // Page1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
@@ -158,7 +169,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Name = "Page1";
-            this.Size = new System.Drawing.Size(1473, 607);
+            this.Size = new System.Drawing.Size(1638, 594);
             this.Load += new System.EventHandler(this.Page1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -181,6 +192,7 @@
         private Wisej.Web.Label label1;
         private Wisej.Web.DataGridView dataGridView1;
         private Wisej.Web.DataGridViewTextBoxColumn numeros;
+        private Wisej.Web.Button Botao_Auxiliar;
     }
 }
 

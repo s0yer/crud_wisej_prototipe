@@ -17,4 +17,7 @@ ADD COLUMN `datatempo` DATETIME NOT NULL AFTER `numero`;
 ALTER TABLE `mydb`.`lucknumber` 
 CHANGE COLUMN `datatempo` `datatempo` VARCHAR(45) NULL DEFAULT NULL ;
 
+ALTER TABLE `mydb`.`lucknumber` 
+DROP COLUMN `datatempo`;
+
 -----

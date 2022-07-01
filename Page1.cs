@@ -12,9 +12,12 @@ namespace crud_wisej_prototipe
     public partial class Page1 : Page
     {
         int num = 0;
-        Random rd = new Random();
         int luck_max = 0;
 
+        Luck luck = new Luck();
+        MetodosAuxiliares metodosAuxiliares = new MetodosAuxiliares();
+        BasicDAL basicDAL = new BasicDAL();
+        
         public Page1()
         {
             InitializeComponent();
@@ -28,15 +31,9 @@ namespace crud_wisej_prototipe
 
 
 
-
-
-
         private void Botao_GeraNumeroSorte(object sender, EventArgs e)
         {
-            int numero_sorte = rd.Next(55, 5555);
-            luck_max = Math.Max(numero_sorte, luck_max);
-            MessageBox.Show($"O numero da sorte e {numero_sorte}" + $"\nNumero de bilhetes retirados {num}" + $"\nSorte maxima foi {luck_max}");
-            num++;
+            luck.GeraNumeroSorte(num, luck_max);
         }
 
         //botao numero da sorte
@@ -60,75 +57,14 @@ namespace crud_wisej_prototipe
         // popula database
         private void Botao_PopulaTabela(object sender, EventArgs e)
         {
-            try
-            {
-                string myConnectionString = "server=localhost;database=mydb;uid=root;password=123456;port=3306;";
-                var conn = new MySql.Data.MySqlClient.MySqlConnection(myConnectionString);
-                conn.Open();
-                // conexao aberta -----------
-
-                //gera objeto aleatorio
-                Random rd = new Random();
-
-
-
-                // loop que popula tabela com numeros aleatorios
-                // insere 10 valores aleatorios
-                int i = 0;
-                while (i < 10)
-                {
-
-                    int crazy_number = rd.Next(55, 5555);
-
-                    DateTime dataInstante = DateTime.Now;
-                    DateTime apenasData = DateTime.Today;
-
-                    string.Format("select convert(dataInstante, '{0:s}'", DateTime.Now);
-
-                    DateTime dataTratada = DateTimeExtensions.ToClientTime(dataInstante); // o slq nao consegue entender o formato desse jeito
-                    MessageBox.Show("O tempo Voa: " + dataTratada + " | " + dataInstante + " | " + apenasData);
-
-                    //String InsertCliente = ($"INSERT INTO lucknumber (numero, datetime) VALUES({crazy_number}, convert(dataTratada,'18-06-12 10:34:09 PM',5))");
-                    String InsertCliente = ($"INSERT INTO lucknumber (numero, datetime) VALUES({crazy_number}, 'dataInstante')");
-
-                    MySqlCommand cmd = new MySqlCommand(InsertCliente, conn);
-                    if (cmd.ExecuteNonQuery() == 1)
-                    {
-                        Console.WriteLine($"\nDado Inserido: {crazy_number}");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Erros - Dados nao Inseridos");
-                    }
-                    i++;
-                }
-                MessageBox.Show("Dados Inseridos");
-                conn.Close();
-            }
-            catch (MySql.Data.MySqlClient.MySqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            basicDAL.testaInsercao();
         }
 
 
         // testa database
         private void Botao_TestaConexao(object sender, EventArgs e)
         {
-            {
-                string myConnectionString = "server=localhost;database=mydb;uid=root;password=123456;port=3306;";
-
-                try
-                {
-                    var conn = new MySql.Data.MySqlClient.MySqlConnection(myConnectionString);
-                    conn.Open();
-                    MessageBox.Show($"Conexao com sucesso");
-                }
-                catch (MySql.Data.MySqlClient.MySqlException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
+            basicDAL.TestaConexao();
         }
 
         //salva txt
@@ -141,26 +77,15 @@ namespace crud_wisej_prototipe
         // mostra dados em terminal
         private void Botao_MostraDBTerminal(object sender, EventArgs e)
         {
+         
 
-            string myConnectionString = "server=localhost;database=mydb;uid=root;password=123456;port=3306;";
+            //retorna data time tratado
+            var hashMetAux = metodosAuxiliares.DataTempoAgora();
+            var tempo = metodosAuxiliares.DataTempoAgora();
+            //Type type = GetType(type);
+            Console.WriteLine(tempo);
+            Console.WriteLine(hashMetAux);
 
-            try
-            {
-                var conn = new MySql.Data.MySqlClient.MySqlConnection(myConnectionString);
-                conn.Open();
-                MessageBox.Show($"Conexao com sucesso");
-            }
-            catch (MySql.Data.MySqlClient.MySqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-
-                        //MessageBox.Show("Successfully login");
-                        //dataGridView1.DataSource = numeros;
-                        //label1.Text = numeros.ToString();
-                    
- 
         }
 
         private void Page1_Load(object sender, EventArgs e)
@@ -176,6 +101,12 @@ namespace crud_wisej_prototipe
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            //metodosAuxiliares.DataTempoAgora();
+            //basicDAL.TestaConexao();
         }
     }
 }
