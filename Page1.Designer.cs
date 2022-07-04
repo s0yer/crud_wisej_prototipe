@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Wisej.Web.ColumnHeader columnHeader1;
             this.panel1 = new Wisej.Web.Panel();
             this.Botao_Auxiliar = new Wisej.Web.Button();
             this.comboBox1 = new Wisej.Web.ComboBox();
@@ -38,10 +39,11 @@
             this.button5 = new Wisej.Web.Button();
             this.button7 = new Wisej.Web.Button();
             this.label1 = new Wisej.Web.Label();
-            this.dataGridView1 = new Wisej.Web.DataGridView();
-            this.numeros = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.listView1 = new Wisej.Web.ListView();
+            this.dataGridView2 = new Wisej.Web.DataGridView();
+            columnHeader1 = new Wisej.Web.ColumnHeader();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -51,9 +53,9 @@
             this.panel1.Controls.Add(this.Botao_Auxiliar);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.HeaderSize = 34;
-            this.panel1.Location = new System.Drawing.Point(16, 3);
+            this.panel1.Location = new System.Drawing.Point(0, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1829, 90);
+            this.panel1.Size = new System.Drawing.Size(2043, 90);
             this.panel1.TabIndex = 0;
             // 
             // Botao_Auxiliar
@@ -68,10 +70,11 @@
             // comboBox1
             // 
             this.comboBox1.LabelText = "Recover";
-            this.comboBox1.Location = new System.Drawing.Point(1507, 21);
+            this.comboBox1.Location = new System.Drawing.Point(1357, 21);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(120, 53);
             this.comboBox1.TabIndex = 9;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -140,26 +143,37 @@
             this.label1.Text = "Flag Test";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // dataGridView1
+            // listView1
             // 
-            this.dataGridView1.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
-            this.numeros});
-            this.dataGridView1.Location = new System.Drawing.Point(470, 160);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(412, 525);
-            this.dataGridView1.TabIndex = 10;
+            this.listView1.Columns.AddRange(new Wisej.Web.ColumnHeader[] {
+            columnHeader1});
+            this.listView1.Location = new System.Drawing.Point(1022, 170);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(518, 525);
+            this.listView1.TabIndex = 11;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
-            // numeros
+            // columnHeader1
             // 
-            this.numeros.DataPropertyName = "numeros";
-            this.numeros.HeaderText = "numeros";
-            this.numeros.Name = "numeros";
+            columnHeader1.DisplayPropertyName = "numero";
+            columnHeader1.Name = "columnHeader1";
+            columnHeader1.Text = "Numero da Sorte";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToDeleteRows = true;
+            this.dataGridView2.Location = new System.Drawing.Point(316, 170);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(620, 515);
+            this.dataGridView2.TabIndex = 12;
+            this.dataGridView2.Click += new System.EventHandler(this.dataGridView2_Click);
             // 
             // Page1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button5);
@@ -169,11 +183,11 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Name = "Page1";
-            this.Size = new System.Drawing.Size(1377, 726);
+            this.Size = new System.Drawing.Size(2295, 747);
             this.Load += new System.EventHandler(this.Page1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,9 +204,9 @@
         private Wisej.Web.Button button7;
         private Wisej.Web.ComboBox comboBox1;
         private Wisej.Web.Label label1;
-        private Wisej.Web.DataGridView dataGridView1;
-        private Wisej.Web.DataGridViewTextBoxColumn numeros;
         private Wisej.Web.Button Botao_Auxiliar;
+        private Wisej.Web.ListView listView1;
+        private Wisej.Web.DataGridView dataGridView2;
     }
 }
 

@@ -12,6 +12,7 @@ namespace crud_wisej_prototipe
 {
     public partial class Page1 : Page
     {
+        private const string V = "Teste de atribuicao";
         int num = 0;
         int luck_max = 0;
 
@@ -82,10 +83,11 @@ namespace crud_wisej_prototipe
 
         private void Page1_Load(object sender, EventArgs e)
         {
-            //MySqlConnection conn = new MySqlConnection("server=localhost;database=mydb;uid=root;password=123456;port=3306;");
-            //MySqlDataAdapter mda = new MySqlDataAdapter("SHOW DATABASES;", conn);
-            //conn.Open();
 
+            dataGridView2.DataSource = basicDAL.RecuperaListaNumeros();
+            listView1.DataSource = basicDAL.RecuperaListaNumeros();
+            //comboBox1.DataSource = basicDAL.RecuperaListaNumeros();
+            comboBox1.
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -93,6 +95,20 @@ namespace crud_wisej_prototipe
 
         }
 
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

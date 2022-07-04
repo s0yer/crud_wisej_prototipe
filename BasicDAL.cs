@@ -20,6 +20,8 @@ namespace crud_wisej_prototipe
                 this.conexao = new MySqlConnection("server=localhost;database=mydb;uid=root;password=123456;port=3306;");
                 this.conexao.Open();
                 MessageBox.Show("Conexao aberta...");
+
+                EstadoConexao(conexao);
             }
             catch (MySqlException e)
             {
@@ -29,11 +31,19 @@ namespace crud_wisej_prototipe
             {
                 throw new Exception(ex.Message);
             }
-
-
         }
 
-    public void Dispose()
+        public bool EstadoConexao(MySqlConnection conexao)
+        {
+            if(conexao.State == System.Data.ConnectionState.Open)
+            {
+                return true;
+            }
+            else { return false; }
+            
+        }
+
+        public void Dispose()
         {
             this.conexao.Close();
         }
@@ -98,6 +108,8 @@ namespace crud_wisej_prototipe
         }
 
 
+
+
         // necessita da biblioteca using System.Collections.Generic;
         internal IList<Luck> RecuperaListaNumeros()
         {
@@ -118,10 +130,13 @@ namespace crud_wisej_prototipe
             resultado.Close();
 
             return lista;
-        }
+        }        
+        
+        
+
+
 
         // metodos antigos --------------------------
-
 
 
     public void AbreConexao() // precisa de retorno do conn?

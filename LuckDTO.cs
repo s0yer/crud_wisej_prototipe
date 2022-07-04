@@ -24,8 +24,6 @@ namespace crud_wisej_prototipe
             {
                 throw new Exception(ex.Message);
             }
-
-
         }
 
         public void testaInsercao()
@@ -49,8 +47,6 @@ namespace crud_wisej_prototipe
                 {
 
                     int crazy_number = rd.Next(55, 5555);
-
-
 
                     //String InsertCliente = ($"INSERT INTO lucknumber (numero, datetime) VALUES({crazy_number}, convert(dataTratada,'18-06-12 10:34:09 PM',5))");
                     //String InsertCliente = ($"INSERT INTO lucknumber (numero, datetime) VALUES({crazy_number}, 'dataInstante')");
