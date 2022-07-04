@@ -6,6 +6,7 @@ using System.Configuration;
 using System.Data;
 using MySqlCommand = MySql.Data.MySqlClient.MySqlCommand;
 using Humanizer;
+using System.Collections.Generic;
 
 namespace crud_wisej_prototipe
 {
@@ -23,13 +24,6 @@ namespace crud_wisej_prototipe
             InitializeComponent();
         }
 
-        // a ser implementado
-        static void exe_luck_num()
-        {
-            MessageBox.Show("metodo roda luck num");
-        }
-
-
 
         private void Botao_GeraNumeroSorte(object sender, EventArgs e)
         {
@@ -39,19 +33,7 @@ namespace crud_wisej_prototipe
         //botao numero da sorte
         private void Botao_TestaSorte(object sender, EventArgs e)
         {
-            try
-            {
-                if (luck_max > 54)
-                {
-                    MessageBox.Show($"\n Parabens numero da sorte esta dentro dos parametros {luck_max}");
-                }
-            }
-            catch
-            {
-                MessageBox.Show($"Rode primeiro o numero da sorte. :)");
-            }
-            novaWindow nw = new novaWindow();
-            nw.Show();
+            luck.TestaSorte(luck_max);
         }
 
         // popula database
@@ -67,7 +49,7 @@ namespace crud_wisej_prototipe
             basicDAL.TestaConexao();
         }
 
-        //salva txt
+        //salva txtOrg
         private void Botao_SalvaTxt(object sender, EventArgs e)
         {
             ExportaDados exportar = new ExportaDados();
@@ -92,9 +74,7 @@ namespace crud_wisej_prototipe
         {
             //MySqlConnection conn = new MySqlConnection("server=localhost;database=mydb;uid=root;password=123456;port=3306;");
             //MySqlDataAdapter mda = new MySqlDataAdapter("SHOW DATABASES;", conn);
-
             //conn.Open();
-
 
         }
 
@@ -105,8 +85,23 @@ namespace crud_wisej_prototipe
 
         private void button6_Click(object sender, EventArgs e)
         {
+            //botao para testar metodos 
+
             //metodosAuxiliares.DataTempoAgora();
             //basicDAL.TestaConexao();
+
+        }
+    }
+    public class LuckDTO
+    {
+        public void ConversorLista()
+        {
+            List<string> listaDAL = new List<string>();
+            var resultado = String.Join(", ", listaDAL.ToArray());
+            //var resultado = String.Join(", ", listaDAL.ToArray());
+
+            //MessageBox.Show(resultado); // nao aparece nada
+            Console.WriteLine(resultado);
         }
     }
 }

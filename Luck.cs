@@ -5,6 +5,10 @@ namespace crud_wisej_prototipe
 {
     public class Luck
     {
+        public int Id { get; internal set; }
+        public int numero { get; internal set; }
+
+        // construtor gera numero da sorte
         public void GeraNumeroSorte(int luck_max, int num)
         {
             Random rd = new Random();
@@ -15,6 +19,22 @@ namespace crud_wisej_prototipe
             num++;
 
             //return num;
+        }
+        public void TestaSorte(int luck_max)
+        {
+            try
+            {
+                if (luck_max > 54)
+                {
+                    MessageBox.Show($"\n Parabens numero da sorte esta dentro dos parametros {luck_max}");
+                }
+            }
+            catch
+            {
+                MessageBox.Show($"Rode primeiro o numero da sorte. :)");
+            }
+            novaWindow nw = new novaWindow();
+            nw.Show();
         }
     }
 
