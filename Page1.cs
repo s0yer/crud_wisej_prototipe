@@ -18,12 +18,22 @@ namespace crud_wisej_prototipe
         Luck luck = new Luck();
         MetodosAuxiliares metodosAuxiliares = new MetodosAuxiliares();
         BasicDAL basicDAL = new BasicDAL();
+        LuckDTO luckDTO = new LuckDTO();
         
         public Page1()
         {
             InitializeComponent();
         }
 
+        // botao auxiliar para teste
+        private void button6_Click(object sender, EventArgs e)
+        {
+            //botao para testar metodos 
+            //metodosAuxiliares.DataTempoAgora();
+            //basicDAL.TestaConexao();
+            //luckDTO.ConversorLista();
+            luckDTO.RetornaLista();
+        }
 
         private void Botao_GeraNumeroSorte(object sender, EventArgs e)
         {
@@ -39,7 +49,7 @@ namespace crud_wisej_prototipe
         // popula database
         private void Botao_PopulaTabela(object sender, EventArgs e)
         {
-            basicDAL.testaInsercao();
+            luckDTO.testaInsercao();
         }
 
 
@@ -83,26 +93,6 @@ namespace crud_wisej_prototipe
 
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            //botao para testar metodos 
-
-            //metodosAuxiliares.DataTempoAgora();
-            //basicDAL.TestaConexao();
-
-        }
-    }
-    public class LuckDTO
-    {
-        public void ConversorLista()
-        {
-            List<string> listaDAL = new List<string>();
-            var resultado = String.Join(", ", listaDAL.ToArray());
-            //var resultado = String.Join(", ", listaDAL.ToArray());
-
-            //MessageBox.Show(resultado); // nao aparece nada
-            Console.WriteLine(resultado);
-        }
     }
 }
 
