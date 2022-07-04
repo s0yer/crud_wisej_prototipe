@@ -33,7 +33,6 @@ namespace crud_wisej_prototipe
             //metodosAuxiliares.DataTempoAgora();
             //basicDAL.TestaConexao();
             //luckDTO.ConversorLista();
-            luckDTO.RetornaLista();
         }
 
         private void Botao_GeraNumeroSorte(object sender, EventArgs e)
@@ -87,7 +86,6 @@ namespace crud_wisej_prototipe
             dataGridView2.DataSource = basicDAL.RecuperaListaNumeros();
             listView1.DataSource = basicDAL.RecuperaListaNumeros();
             //comboBox1.DataSource = basicDAL.RecuperaListaNumeros();
-            comboBox1.
         }
 
         private void label1_Click(object sender, EventArgs e)

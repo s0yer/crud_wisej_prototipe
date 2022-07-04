@@ -24,5 +24,4 @@ namespace crud_wisej_prototipe
         //{
         //}
     }
-
 }

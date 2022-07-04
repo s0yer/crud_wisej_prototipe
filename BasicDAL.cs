@@ -130,10 +130,7 @@ namespace crud_wisej_prototipe
             resultado.Close();
 
             return lista;
-        }        
-        
-        
-
+        }                      
 
 
         // metodos antigos --------------------------

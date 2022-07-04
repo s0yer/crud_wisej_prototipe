@@ -7,23 +7,10 @@ namespace crud_wisej_prototipe
 {
     public class LuckDTO
     {
-        public void RetornaLista()
+        public void RetornaServicoResultados()
         {
-            try{
-                //var lista = new List<Luck>();
+            
 
-                var repo = new BasicDAL();
-                String lista = repo.RecuperaListaNumeros().ToString();
-                Console.WriteLine(lista);
-            }
-            catch (MySqlException e)
-            {
-                throw new SystemException(e.Message, e);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
         }
 
         public void testaInsercao()
