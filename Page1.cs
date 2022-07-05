@@ -18,7 +18,6 @@ namespace crud_wisej_prototipe
 
         Luck luck = new Luck();
         MetodosAuxiliares metodosAuxiliares = new MetodosAuxiliares();
-        //BasicDAL basicDAL = new BasicDAL();
         LuckDTO luckDTO = new LuckDTO();
         
         public Page1()
@@ -62,14 +61,17 @@ namespace crud_wisej_prototipe
         // testa database
         private void Botao_TestaConexao(object sender, EventArgs e)
         {
-            //basicDAL.TestaConexao();
+            luckDTO.TestaConexao();
         }
 
         //salva txtOrg
         private void Botao_SalvaTxt(object sender, EventArgs e)
         {
             ExportaDados exportar = new ExportaDados();
-            exportar.ExportaTxt();
+
+            var listaluck = luckDTO.RecuperaListaNumeros();
+           // exportar.ExportaTxt(luckDTO.ConversorLista(listaluck));
+            exportar.ExportaTxt(luckDTO.ConversorLista(listaluck));
         }
 
         // mostra dados em terminal
@@ -110,6 +112,11 @@ namespace crud_wisej_prototipe
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuBar1_Click(object sender, EventArgs e)
         {
 
         }

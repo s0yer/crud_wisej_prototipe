@@ -42,6 +42,7 @@
             this.label1 = new Wisej.Web.Label();
             this.listView1 = new Wisej.Web.ListView();
             this.dataGridView2 = new Wisej.Web.DataGridView();
+            this.menuBar1 = new Wisej.Web.MenuBar();
             columnHeader1 = new Wisej.Web.ColumnHeader();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -181,10 +182,21 @@
             this.dataGridView2.TabIndex = 12;
             this.dataGridView2.Click += new System.EventHandler(this.dataGridView2_Click);
             // 
+            // menuBar1
+            // 
+            this.menuBar1.Dock = Wisej.Web.DockStyle.Bottom;
+            this.menuBar1.Location = new System.Drawing.Point(0, 720);
+            this.menuBar1.Name = "menuBar1";
+            this.menuBar1.Size = new System.Drawing.Size(2043, 40);
+            this.menuBar1.TabIndex = 13;
+            this.menuBar1.TabStop = false;
+            this.menuBar1.Click += new System.EventHandler(this.menuBar1_Click);
+            // 
             // Page1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
+            this.Controls.Add(this.menuBar1);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.label1);
@@ -196,7 +208,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Name = "Page1";
-            this.Size = new System.Drawing.Size(1868, 739);
+            this.Size = new System.Drawing.Size(1790, 739);
             this.Load += new System.EventHandler(this.Page1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -221,6 +233,7 @@
         private Wisej.Web.ListView listView1;
         private Wisej.Web.DataGridView dataGridView2;
         private Wisej.Web.Button button6;
+        private Wisej.Web.MenuBar menuBar1;
     }
 }
 

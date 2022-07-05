@@ -63,9 +63,9 @@ namespace crud_wisej_prototipe
         {
             try
             {
-                var conexao = AbreConexao();
+                //var conexao = AbreConexao();
 
-                var insertCmd = conexao.CreateCommand();
+                var insertCmd = AbreConexao().CreateCommand();
                 insertCmd.CommandText = "INSERT INTO lucknumber (numero) VALUES (@numero)";
 
                 var paramNumero = new MySqlParameter("numero", lu.numero);
@@ -128,39 +128,6 @@ namespace crud_wisej_prototipe
         // metodos antigos --------------------------
 
 
-    //public void AbreConexao() // precisa de retorno do conn?
-    //    {
-    //        {
-    //            string myConnectionString = "server=localhost;database=mydb;uid=root;password=123456;port=3306;";
-
-    //            try
-    //            {
-    //                var conn = new MySql.Data.MySqlClient.MySqlConnection(myConnectionString);
-    //                conn.Open();
-    //            }
-    //            catch (MySql.Data.MySqlClient.MySqlException ex)
-    //            {
-    //                MessageBox.Show(ex.Message);
-    //            }
-    //        }
-    //    }
-    public void TestaConexao()
-        {
-            {
-                string myConnectionString = "server=localhost;database=mydb;uid=root;password=123456;port=3306;";
-
-                try
-                {
-                    var conn = new MySql.Data.MySqlClient.MySqlConnection(myConnectionString);
-                    conn.Open();
-                    MessageBox.Show($"Conexao com sucesso");
-                }
-                catch (MySql.Data.MySqlClient.MySqlException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-        }
     }
 
 }

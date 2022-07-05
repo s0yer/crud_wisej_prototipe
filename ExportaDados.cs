@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Wisej.Web;
 
@@ -6,13 +7,14 @@ namespace crud_wisej_prototipe
 {
     public class ExportaDados
     {
-        public void ExportaTxt()
+        //public void ExportaTxt(IList<Luck> lucks)
+        public void ExportaTxt(string lucks)
         {
             // usa sistemIO
-            string writeText = "Hello World!";  // Create a text string
-            File.WriteAllText("filename.txt", writeText);  // Create a file and write the content of writeText to it
+            string writeText = lucks.ToString();  // Create a text string
+            File.WriteAllText("LogLucks.txt", writeText);  // Create a file and write the content of writeText to it
 
-            string readText = File.ReadAllText("filename.txt");  // Read the contents of the file
+            string readText = File.ReadAllText("LogLucks.txt");  // Read the contents of the file
             //usa system
             Console.WriteLine(readText);  // Output the content
 

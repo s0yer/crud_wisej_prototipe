@@ -8,11 +8,6 @@ namespace crud_wisej_prototipe
     public class LuckDTO
     {
         BasicDAL dal = new BasicDAL();
-        public void RetornaServicoResultados()
-        {
-            
-
-        }
 
         public void InsercaoRandom()
         {
@@ -113,14 +108,38 @@ namespace crud_wisej_prototipe
             return lista;
         }
 
-        public void ConversorLista()
+        public string ConversorLista(IList<Luck> listaluck)
         {
-            List<string> listaDAL = new List<string>();
-            var resultado = String.Join(", ", listaDAL.ToArray());
-            //var resultado = String.Join(", ", listaDAL.ToArray());
+            string dados = string.Join(" | ", listaluck);
 
-            //MessageBox.Show(resultado); // nao aparece nada
-            Console.WriteLine(resultado);
+            return dados;
+        }
+
+        public void TestaConexao()
+        {
+            {
+                string myConnectionString = "server=localhost;database=mydb;uid=root;password=123456;port=3306;";
+
+                try
+                {
+                    var conn = new MySql.Data.MySqlClient.MySqlConnection(myConnectionString);
+                    conn.Open();
+                    if (dal.EstadoConexao(conn) == true)
+                    {
+                        MessageBox.Show($"Conexao com sucesso");
+
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Nao esta conectado");
+
+                    }
+                }
+                catch (MySql.Data.MySqlClient.MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }
