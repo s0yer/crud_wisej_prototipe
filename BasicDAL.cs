@@ -8,8 +8,7 @@ namespace crud_wisej_prototipe
     public class BasicDAL
     {
 
-    private MySqlConnection conexao;
-                
+    private MySqlConnection conexao;               
 
     //Construtor que ja abre a conexao quando executa a aplicacao
     public BasicDAL()
@@ -17,11 +16,12 @@ namespace crud_wisej_prototipe
             //criar um metodo para ver se o bd existe
             try
             {
-                this.conexao = new MySqlConnection("server=localhost;database=mydb;uid=root;password=123456;port=3306;");
-                this.conexao.Open();
-                MessageBox.Show("Conexao aberta...");
+               // AbreConexao();
+                //this.conexao = new mysqlconnection("server=localhost;database=mydb;uid=root;password=123456;port=3306;");
+                //this.conexao.open();
+                //messagebox.show("conexao aberta...");
 
-                EstadoConexao(conexao);
+                //estadoconexao(conexao);
             }
             catch (MySqlException e)
             {
@@ -31,6 +31,16 @@ namespace crud_wisej_prototipe
             {
                 throw new Exception(ex.Message);
             }
+        }
+
+        public MySqlConnection AbreConexao()
+        {
+            this.conexao = new MySqlConnection("server=localhost;database=mydb;uid=root;password=123456;port=3306;");
+            this.conexao.Open();
+            //MessageBox.Show("Conexao aberta...");
+            Console.WriteLine("Conexao aberta...");
+
+            return this.conexao;
         }
 
         public bool EstadoConexao(MySqlConnection conexao)
@@ -43,6 +53,7 @@ namespace crud_wisej_prototipe
             
         }
 
+
         public void Dispose()
         {
             this.conexao.Close();
@@ -52,11 +63,16 @@ namespace crud_wisej_prototipe
         {
             try
             {
+                var conexao = AbreConexao();
+
                 var insertCmd = conexao.CreateCommand();
                 insertCmd.CommandText = "INSERT INTO lucknumber (numero) VALUES (@numero)";
 
                 var paramNumero = new MySqlParameter("numero", lu.numero);
                 insertCmd.Parameters.Add(paramNumero);
+
+                //conexao.Close();
+                Dispose();
             }
             catch (MySqlException e)
             {
@@ -65,7 +81,7 @@ namespace crud_wisej_prototipe
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
-            }
+            }            
         }
 
     internal void Atualizar(Luck lu)
@@ -109,49 +125,25 @@ namespace crud_wisej_prototipe
 
 
 
-
-        // necessita da biblioteca using System.Collections.Generic;
-        internal IList<Luck> RecuperaListaNumeros()
-        {
-            var lista = new List<Luck>();
-            var selectCmd = conexao.CreateCommand();
-            selectCmd.CommandText = "SELECT * FROM lucknumber";
-
-            var resultado = selectCmd.ExecuteReader();
-            while (resultado.Read())
-            {
-                Luck lu = new Luck();
-                lu.Id = Convert.ToInt32(resultado["Id"]);
-                lu.numero = Convert.ToInt32(resultado["numero"]);
-
-                //adiciona na lista um novo produto lido a cada loop
-                lista.Add(lu);
-            }
-            resultado.Close();
-
-            return lista;
-        }                      
-
-
         // metodos antigos --------------------------
 
 
-    public void AbreConexao() // precisa de retorno do conn?
-        {
-            {
-                string myConnectionString = "server=localhost;database=mydb;uid=root;password=123456;port=3306;";
+    //public void AbreConexao() // precisa de retorno do conn?
+    //    {
+    //        {
+    //            string myConnectionString = "server=localhost;database=mydb;uid=root;password=123456;port=3306;";
 
-                try
-                {
-                    var conn = new MySql.Data.MySqlClient.MySqlConnection(myConnectionString);
-                    conn.Open();
-                }
-                catch (MySql.Data.MySqlClient.MySqlException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-        }
+    //            try
+    //            {
+    //                var conn = new MySql.Data.MySqlClient.MySqlConnection(myConnectionString);
+    //                conn.Open();
+    //            }
+    //            catch (MySql.Data.MySqlClient.MySqlException ex)
+    //            {
+    //                MessageBox.Show(ex.Message);
+    //            }
+    //        }
+    //    }
     public void TestaConexao()
         {
             {

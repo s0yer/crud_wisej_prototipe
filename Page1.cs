@@ -18,7 +18,7 @@ namespace crud_wisej_prototipe
 
         Luck luck = new Luck();
         MetodosAuxiliares metodosAuxiliares = new MetodosAuxiliares();
-        BasicDAL basicDAL = new BasicDAL();
+        //BasicDAL basicDAL = new BasicDAL();
         LuckDTO luckDTO = new LuckDTO();
         
         public Page1()
@@ -29,10 +29,15 @@ namespace crud_wisej_prototipe
         // botao auxiliar para teste
         private void button6_Click(object sender, EventArgs e)
         {
+
+
             //botao para testar metodos 
             //metodosAuxiliares.DataTempoAgora();
             //basicDAL.TestaConexao();
             //luckDTO.ConversorLista();
+            //uckDTO.InsercaoRandom();
+            luckDTO.InsercaoRandom();
+
         }
 
         private void Botao_GeraNumeroSorte(object sender, EventArgs e)
@@ -50,13 +55,14 @@ namespace crud_wisej_prototipe
         private void Botao_PopulaTabela(object sender, EventArgs e)
         {
             luckDTO.testaInsercao();
+            
         }
 
 
         // testa database
         private void Botao_TestaConexao(object sender, EventArgs e)
         {
-            basicDAL.TestaConexao();
+            //basicDAL.TestaConexao();
         }
 
         //salva txtOrg
@@ -83,8 +89,8 @@ namespace crud_wisej_prototipe
         private void Page1_Load(object sender, EventArgs e)
         {
 
-            dataGridView2.DataSource = basicDAL.RecuperaListaNumeros();
-            listView1.DataSource = basicDAL.RecuperaListaNumeros();
+            dataGridView2.DataSource = luckDTO.RecuperaListaNumeros();
+            listView1.DataSource = luckDTO.RecuperaListaNumeros();
             //comboBox1.DataSource = basicDAL.RecuperaListaNumeros();
         }
 

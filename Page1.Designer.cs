@@ -30,6 +30,7 @@
         {
             Wisej.Web.ColumnHeader columnHeader1;
             this.panel1 = new Wisej.Web.Panel();
+            this.button6 = new Wisej.Web.Button();
             this.Botao_Auxiliar = new Wisej.Web.Button();
             this.comboBox1 = new Wisej.Web.ComboBox();
             this.button1 = new Wisej.Web.Button();
@@ -46,10 +47,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
+            // columnHeader1
+            // 
+            columnHeader1.DisplayPropertyName = "numero";
+            columnHeader1.Name = "columnHeader1";
+            columnHeader1.Text = "Numero da Sorte";
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromName("@controlDark");
             this.panel1.BorderStyle = Wisej.Web.BorderStyle.Solid;
+            this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.Botao_Auxiliar);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.HeaderSize = 34;
@@ -57,10 +65,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(2043, 90);
             this.panel1.TabIndex = 0;
+            this.panel1.Click += new System.EventHandler(this.Page1_Load);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(51, 21);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(100, 37);
+            this.button6.TabIndex = 13;
+            this.button6.Text = "Atualiza Sistema";
+            this.button6.Click += new System.EventHandler(this.Page1_Load);
             // 
             // Botao_Auxiliar
             // 
-            this.Botao_Auxiliar.Location = new System.Drawing.Point(511, 21);
+            this.Botao_Auxiliar.Location = new System.Drawing.Point(179, 21);
             this.Botao_Auxiliar.Name = "Botao_Auxiliar";
             this.Botao_Auxiliar.Size = new System.Drawing.Size(100, 37);
             this.Botao_Auxiliar.TabIndex = 11;
@@ -136,12 +154,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("@defaultBold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label1.Location = new System.Drawing.Point(67, 170);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 18);
+            this.label1.Size = new System.Drawing.Size(59, 18);
             this.label1.TabIndex = 9;
             this.label1.Text = "Flag Test";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Click += new System.EventHandler(this.Page1_Load);
             // 
             // listView1
             // 
@@ -152,12 +171,6 @@
             this.listView1.Size = new System.Drawing.Size(518, 525);
             this.listView1.TabIndex = 11;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
-            // 
-            // columnHeader1
-            // 
-            columnHeader1.DisplayPropertyName = "numero";
-            columnHeader1.Name = "columnHeader1";
-            columnHeader1.Text = "Numero da Sorte";
             // 
             // dataGridView2
             // 
@@ -183,7 +196,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Name = "Page1";
-            this.Size = new System.Drawing.Size(2295, 747);
+            this.Size = new System.Drawing.Size(1868, 739);
             this.Load += new System.EventHandler(this.Page1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -207,6 +220,7 @@
         private Wisej.Web.Button Botao_Auxiliar;
         private Wisej.Web.ListView listView1;
         private Wisej.Web.DataGridView dataGridView2;
+        private Wisej.Web.Button button6;
     }
 }
 
