@@ -185,7 +185,7 @@
             // menuBar1
             // 
             this.menuBar1.Dock = Wisej.Web.DockStyle.Bottom;
-            this.menuBar1.Location = new System.Drawing.Point(0, 720);
+            this.menuBar1.Location = new System.Drawing.Point(0, 695);
             this.menuBar1.Name = "menuBar1";
             this.menuBar1.Size = new System.Drawing.Size(2043, 40);
             this.menuBar1.TabIndex = 13;
@@ -208,7 +208,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Name = "Page1";
-            this.Size = new System.Drawing.Size(1790, 739);
+            this.Size = new System.Drawing.Size(1882, 729);
             this.Load += new System.EventHandler(this.Page1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

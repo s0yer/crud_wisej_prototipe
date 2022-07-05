@@ -14,13 +14,13 @@ namespace crud_wisej_prototipe
     public BasicDAL()
         {
             //criar um metodo para ver se o bd existe
+
             try
             {
                // AbreConexao();
                 //this.conexao = new mysqlconnection("server=localhost;database=mydb;uid=root;password=123456;port=3306;");
                 //this.conexao.open();
                 //messagebox.show("conexao aberta...");
-
                 //estadoconexao(conexao);
             }
             catch (MySqlException e)

@@ -9,12 +9,24 @@ namespace crud_wisej_prototipe
     {
         BasicDAL dal = new BasicDAL();
 
+        public int RetornaQtdNumeros()
+        {
+            int total = 0;
+            var selectCmd = dal.AbreConexao().CreateCommand();
+            selectCmd.CommandText = "SELECT COUNT(numero) FROM lucknumber";
+
+            //var resultado = selectCmd.ExecuteNonQuery();
+            var resultado = selectCmd.ExecuteScalar();
+            total = Convert.ToInt32(resultado);
+
+            return total;
+
+        }
         public void InsercaoRandom()
         {
             try
             {
   
-                // conexao aberta -----------
                 //gera objeto aleatorio
                 Random rd = new Random();
                 Luck luck = new Luck();

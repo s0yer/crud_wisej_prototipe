@@ -93,6 +93,8 @@ namespace crud_wisej_prototipe
 
             dataGridView2.DataSource = luckDTO.RecuperaListaNumeros();
             listView1.DataSource = luckDTO.RecuperaListaNumeros();
+            this.label1.Text = luckDTO.RetornaQtdNumeros().ToString();
+
             //comboBox1.DataSource = basicDAL.RecuperaListaNumeros();
         }
 
@@ -120,6 +122,7 @@ namespace crud_wisej_prototipe
         {
 
         }
+
     }
 }
 
