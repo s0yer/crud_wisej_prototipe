@@ -71,7 +71,7 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label1);
             this.Name = "novaWindow";
-            this.Text = "novaWindow";
+            this.Text = "Datas da Sorte";
             this.ResumeLayout(false);
             this.PerformLayout();
 

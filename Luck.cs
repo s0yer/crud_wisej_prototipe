@@ -8,6 +8,10 @@ namespace crud_wisej_prototipe
         public int Id { get; internal set; }
         public int numero { get; internal set; }
 
+        public override string ToString()
+        {
+            return $"Luck: {this.Id}, {this.numero}";
+        }
         // construtor gera numero da sorte
         public void GeraNumeroSorte(int luck_max, int num)
         {
@@ -36,6 +40,7 @@ namespace crud_wisej_prototipe
             novaWindow nw = new novaWindow();
             nw.Show();
         }
+
     }
 
 }

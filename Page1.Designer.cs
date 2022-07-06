@@ -28,21 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             Wisej.Web.ColumnHeader columnHeader1;
             this.panel1 = new Wisej.Web.Panel();
             this.button6 = new Wisej.Web.Button();
             this.Botao_Auxiliar = new Wisej.Web.Button();
             this.comboBox1 = new Wisej.Web.ComboBox();
             this.button1 = new Wisej.Web.Button();
-            this.button2 = new Wisej.Web.Button();
-            this.button3 = new Wisej.Web.Button();
-            this.button4 = new Wisej.Web.Button();
-            this.button5 = new Wisej.Web.Button();
+            this.data_sorte = new Wisej.Web.Button();
+            this.popula_database = new Wisej.Web.Button();
+            this.testa_conexao = new Wisej.Web.Button();
+            this.salva_txt = new Wisej.Web.Button();
             this.button7 = new Wisej.Web.Button();
             this.label1 = new Wisej.Web.Label();
             this.listView1 = new Wisej.Web.ListView();
             this.dataGridView2 = new Wisej.Web.DataGridView();
             this.menuBar1 = new Wisej.Web.MenuBar();
+            this.toolTip1 = new Wisej.Web.ToolTip(this.components);
+            this.open_window = new Wisej.Web.Button();
             columnHeader1 = new Wisej.Web.ColumnHeader();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -98,65 +101,65 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromName("@info");
-            this.button1.Location = new System.Drawing.Point(52, 648);
+            this.button1.Location = new System.Drawing.Point(52, 606);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(136, 37);
             this.button1.TabIndex = 1;
             this.button1.Text = "Numero da Sorte :3";
             this.button1.Click += new System.EventHandler(this.Botao_GeraNumeroSorte);
             // 
-            // button2
+            // data_sorte
             // 
-            this.button2.Location = new System.Drawing.Point(52, 244);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 37);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Escolha o dia";
-            this.button2.Click += new System.EventHandler(this.Botao_TestaSorte);
+            this.data_sorte.Location = new System.Drawing.Point(52, 244);
+            this.data_sorte.Name = "data_sorte";
+            this.data_sorte.Size = new System.Drawing.Size(163, 37);
+            this.data_sorte.TabIndex = 2;
+            this.data_sorte.Text = "Data da Sorte";
+            this.data_sorte.Click += new System.EventHandler(this.Botao_TestaSorte);
             // 
-            // button3
+            // popula_database
             // 
-            this.button3.Location = new System.Drawing.Point(52, 310);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(146, 35);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Popula database";
-            this.button3.Click += new System.EventHandler(this.Botao_PopulaTabela);
+            this.popula_database.Location = new System.Drawing.Point(52, 310);
+            this.popula_database.Name = "popula_database";
+            this.popula_database.Size = new System.Drawing.Size(163, 35);
+            this.popula_database.TabIndex = 3;
+            this.popula_database.Text = "Popula database";
+            this.popula_database.Click += new System.EventHandler(this.Botao_PopulaTabela);
             // 
-            // button4
+            // testa_conexao
             // 
-            this.button4.AutoSize = true;
-            this.button4.Location = new System.Drawing.Point(52, 441);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(205, 46);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Testa Conexao Database";
-            this.button4.Click += new System.EventHandler(this.Botao_TestaConexao);
+            this.testa_conexao.AutoSize = true;
+            this.testa_conexao.Location = new System.Drawing.Point(52, 441);
+            this.testa_conexao.Name = "testa_conexao";
+            this.testa_conexao.Size = new System.Drawing.Size(163, 37);
+            this.testa_conexao.TabIndex = 5;
+            this.testa_conexao.Text = "Testa Conexao DB";
+            this.testa_conexao.Click += new System.EventHandler(this.Botao_TestaConexao);
             // 
-            // button5
+            // salva_txt
             // 
-            this.button5.Location = new System.Drawing.Point(52, 517);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 37);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Salva .Txt";
-            this.button5.Click += new System.EventHandler(this.Botao_SalvaTxt);
+            this.salva_txt.Location = new System.Drawing.Point(52, 511);
+            this.salva_txt.Name = "salva_txt";
+            this.salva_txt.Size = new System.Drawing.Size(163, 37);
+            this.salva_txt.TabIndex = 6;
+            this.salva_txt.Text = "Salva .Txt";
+            this.salva_txt.Click += new System.EventHandler(this.Botao_SalvaTxt);
             // 
             // button7
             // 
             this.button7.AutoSize = true;
-            this.button7.Location = new System.Drawing.Point(52, 372);
+            this.button7.Location = new System.Drawing.Point(52, 377);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(169, 37);
+            this.button7.Size = new System.Drawing.Size(163, 37);
             this.button7.TabIndex = 8;
-            this.button7.Text = "Mostra database Terminal";
+            this.button7.Text = "Mostra Items DB";
             this.button7.Click += new System.EventHandler(this.Botao_MostraDBTerminal);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("@defaultBold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label1.Location = new System.Drawing.Point(67, 170);
+            this.label1.Location = new System.Drawing.Point(316, 187);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 18);
             this.label1.TabIndex = 9;
@@ -176,9 +179,9 @@
             // dataGridView2
             // 
             this.dataGridView2.AllowUserToDeleteRows = true;
-            this.dataGridView2.Location = new System.Drawing.Point(316, 170);
+            this.dataGridView2.Location = new System.Drawing.Point(316, 231);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(620, 515);
+            this.dataGridView2.Size = new System.Drawing.Size(620, 454);
             this.dataGridView2.TabIndex = 12;
             this.dataGridView2.Click += new System.EventHandler(this.dataGridView2_Click);
             // 
@@ -192,23 +195,33 @@
             this.menuBar1.TabStop = false;
             this.menuBar1.Click += new System.EventHandler(this.menuBar1_Click);
             // 
+            // open_window
+            // 
+            this.open_window.Location = new System.Drawing.Point(52, 178);
+            this.open_window.Name = "open_window";
+            this.open_window.Size = new System.Drawing.Size(163, 36);
+            this.open_window.TabIndex = 14;
+            this.open_window.Text = "Open Window";
+            this.open_window.Click += new System.EventHandler(this.button8_Click);
+            // 
             // Page1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
+            this.Controls.Add(this.open_window);
             this.Controls.Add(this.menuBar1);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.salva_txt);
+            this.Controls.Add(this.testa_conexao);
+            this.Controls.Add(this.popula_database);
+            this.Controls.Add(this.data_sorte);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Name = "Page1";
-            this.Size = new System.Drawing.Size(1882, 729);
+            this.Size = new System.Drawing.Size(1323, 505);
             this.Load += new System.EventHandler(this.Page1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -222,10 +235,10 @@
 
         private Wisej.Web.Panel panel1;
         private Wisej.Web.Button button1;
-        private Wisej.Web.Button button2;
-        private Wisej.Web.Button button3;
-        private Wisej.Web.Button button4;
-        private Wisej.Web.Button button5;
+        private Wisej.Web.Button data_sorte;
+        private Wisej.Web.Button popula_database;
+        private Wisej.Web.Button testa_conexao;
+        private Wisej.Web.Button salva_txt;
         private Wisej.Web.Button button7;
         private Wisej.Web.ComboBox comboBox1;
         private Wisej.Web.Label label1;
@@ -234,6 +247,8 @@
         private Wisej.Web.DataGridView dataGridView2;
         private Wisej.Web.Button button6;
         private Wisej.Web.MenuBar menuBar1;
+        private Wisej.Web.ToolTip toolTip1;
+        private Wisej.Web.Button open_window;
     }
 }
 

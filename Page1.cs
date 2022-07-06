@@ -15,6 +15,7 @@ namespace crud_wisej_prototipe
         private const string V = "Teste de atribuicao";
         int num = 0;
         int luck_max = 0;
+        string[] luckcar = { "Volvo", "BMW", "Ford", "Mazda" };
 
         Luck luck = new Luck();
         MetodosAuxiliares metodosAuxiliares = new MetodosAuxiliares();
@@ -28,15 +29,12 @@ namespace crud_wisej_prototipe
         // botao auxiliar para teste
         private void button6_Click(object sender, EventArgs e)
         {
-
-
             //botao para testar metodos 
             //metodosAuxiliares.DataTempoAgora();
             //basicDAL.TestaConexao();
             //luckDTO.ConversorLista();
             //uckDTO.InsercaoRandom();
             luckDTO.InsercaoRandom();
-
         }
 
         private void Botao_GeraNumeroSorte(object sender, EventArgs e)
@@ -54,7 +52,6 @@ namespace crud_wisej_prototipe
         private void Botao_PopulaTabela(object sender, EventArgs e)
         {
             luckDTO.testaInsercao();
-            
         }
 
 
@@ -77,15 +74,15 @@ namespace crud_wisej_prototipe
         // mostra dados em terminal
         private void Botao_MostraDBTerminal(object sender, EventArgs e)
         {
-         
+            ShowItems_window nwTeste = new ShowItems_window();
+            nwTeste.Show();
 
-            //retorna data time tratado
-            var hashMetAux = metodosAuxiliares.DataTempoAgora();
-            var tempo = metodosAuxiliares.DataTempoAgora();
+            // var hashMetAux = metodosAuxiliares.DataTempoAgora();
+            //var tempo = metodosAuxiliares.DataTempoAgora();
             //Type type = GetType(type);
-            Console.WriteLine(tempo);
-            Console.WriteLine(hashMetAux);
 
+            //Console.WriteLine(tempo);
+            //Console.WriteLine(luckDTO.RecuperaListaNumeros());
         }
 
         private void Page1_Load(object sender, EventArgs e)
@@ -93,6 +90,7 @@ namespace crud_wisej_prototipe
 
             dataGridView2.DataSource = luckDTO.RecuperaListaNumeros();
             listView1.DataSource = luckDTO.RecuperaListaNumeros();
+            comboBox1.DataSource = luckcar;
             this.label1.Text = luckDTO.RetornaQtdNumeros().ToString();
 
             //comboBox1.DataSource = basicDAL.RecuperaListaNumeros();
@@ -123,6 +121,11 @@ namespace crud_wisej_prototipe
 
         }
 
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Window nwTeste = new Window();
+            nwTeste.Show();
+        }
     }
 }
 

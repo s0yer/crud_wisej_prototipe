@@ -20,8 +20,24 @@ namespace crud_wisej_prototipe
             total = Convert.ToInt32(resultado);
 
             return total;
+        }        
+        
+        public int RetornaNumerosQuery()
+        {
+            int total = 0;
+            var selectCmd = dal.AbreConexao().CreateCommand();
+            selectCmd.CommandText = "select * from lucknumber";
 
+            //var resultado = selectCmd.ExecuteNonQuery();
+            var resultado = selectCmd.ExecuteNonQuery();
+            //listBox1.DataSource = selectCmd.ExecuteNonQuery();
+
+            //total = Convert.ToBase64String(resultado);
+            //total = resultado.ToString();
+
+            return resultado;
         }
+
         public void InsercaoRandom()
         {
             try
