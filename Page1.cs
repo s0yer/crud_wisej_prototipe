@@ -20,7 +20,7 @@ namespace crud_wisej_prototipe
         Luck luck = new Luck();
         MetodosAuxiliares metodosAuxiliares = new MetodosAuxiliares();
         LuckDTO luckDTO = new LuckDTO();
-        
+
         public Page1()
         {
             InitializeComponent();
@@ -67,8 +67,8 @@ namespace crud_wisej_prototipe
             ExportaDados exportar = new ExportaDados();
 
             var listaluck = luckDTO.RecuperaListaNumeros();
-           // exportar.ExportaTxt(luckDTO.ConversorLista(listaluck));
-            exportar.ExportaTxt(luckDTO.ConversorLista(listaluck));
+            exportar.ExportaTxtSys(luckDTO.RecuperaListaNumeros());
+            //exportar.ExportaJson(luckDTO.RecuperaListaNumeros());
         }
 
         // mostra dados em terminal
@@ -92,6 +92,28 @@ namespace crud_wisej_prototipe
             listView1.DataSource = luckDTO.RecuperaListaNumeros();
             comboBox1.DataSource = luckcar;
             this.label1.Text = luckDTO.RetornaQtdNumeros().ToString();
+
+            //popula treeviewcombo
+
+            //foreach (var luck in luckcar)
+            //{
+            //    treeViewComboBox1.Nodes.Add(new TreeNode(luck));
+            //}            
+
+            //foreach (var luck in luckcar)
+            //{
+            //    menuBar1.?(luck);
+            //}
+
+
+            // popula treeview
+            foreach (var luck in luckcar)
+            {
+                treeView1.Nodes.Add(new TreeNode(luck));
+            }            
+            
+
+            
 
             //comboBox1.DataSource = basicDAL.RecuperaListaNumeros();
         }
@@ -125,6 +147,21 @@ namespace crud_wisej_prototipe
         {
             Window nwTeste = new Window();
             nwTeste.Show();
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
+
+        private void treeViewComboBox1_SelectedItemChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuBar2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

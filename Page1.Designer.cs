@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             Wisej.Web.ColumnHeader columnHeader1;
             this.panel1 = new Wisej.Web.Panel();
+            this.menuBar2 = new Wisej.Web.MenuBar();
+            this.treeViewComboBox1 = new Wisej.Web.TreeViewComboBox();
             this.button6 = new Wisej.Web.Button();
             this.Botao_Auxiliar = new Wisej.Web.Button();
             this.comboBox1 = new Wisej.Web.ComboBox();
@@ -46,6 +48,7 @@
             this.menuBar1 = new Wisej.Web.MenuBar();
             this.toolTip1 = new Wisej.Web.ToolTip(this.components);
             this.open_window = new Wisej.Web.Button();
+            this.treeView1 = new Wisej.Web.TreeView();
             columnHeader1 = new Wisej.Web.ColumnHeader();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -61,6 +64,8 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromName("@controlDark");
             this.panel1.BorderStyle = Wisej.Web.BorderStyle.Solid;
+            this.panel1.Controls.Add(this.menuBar2);
+            this.panel1.Controls.Add(this.treeViewComboBox1);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.Botao_Auxiliar);
             this.panel1.Controls.Add(this.comboBox1);
@@ -70,6 +75,24 @@
             this.panel1.Size = new System.Drawing.Size(2043, 90);
             this.panel1.TabIndex = 0;
             this.panel1.Click += new System.EventHandler(this.Page1_Load);
+            // 
+            // menuBar2
+            // 
+            this.menuBar2.Location = new System.Drawing.Point(1166, 24);
+            this.menuBar2.Name = "menuBar2";
+            this.menuBar2.Size = new System.Drawing.Size(87, 28);
+            this.menuBar2.TabIndex = 15;
+            this.menuBar2.TabStop = false;
+            this.menuBar2.Click += new System.EventHandler(this.menuBar2_Click);
+            // 
+            // treeViewComboBox1
+            // 
+            this.treeViewComboBox1.Anchor = Wisej.Web.AnchorStyles.Left;
+            this.treeViewComboBox1.Location = new System.Drawing.Point(1021, 34);
+            this.treeViewComboBox1.Name = "treeViewComboBox1";
+            this.treeViewComboBox1.Size = new System.Drawing.Size(91, 22);
+            this.treeViewComboBox1.TabIndex = 15;
+            this.treeViewComboBox1.SelectedItemChanged += new System.EventHandler(this.treeViewComboBox1_SelectedItemChanged);
             // 
             // button6
             // 
@@ -92,9 +115,9 @@
             // comboBox1
             // 
             this.comboBox1.LabelText = "Recover";
-            this.comboBox1.Location = new System.Drawing.Point(1357, 21);
+            this.comboBox1.Location = new System.Drawing.Point(1316, 11);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(120, 53);
+            this.comboBox1.Size = new System.Drawing.Size(120, 42);
             this.comboBox1.TabIndex = 9;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -142,7 +165,7 @@
             this.salva_txt.Name = "salva_txt";
             this.salva_txt.Size = new System.Drawing.Size(163, 37);
             this.salva_txt.TabIndex = 6;
-            this.salva_txt.Text = "Salva .Txt";
+            this.salva_txt.Text = "Salva Dados";
             this.salva_txt.Click += new System.EventHandler(this.Botao_SalvaTxt);
             // 
             // button7
@@ -161,7 +184,7 @@
             this.label1.Font = new System.Drawing.Font("@defaultBold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label1.Location = new System.Drawing.Point(316, 187);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 18);
+            this.label1.Size = new System.Drawing.Size(62, 15);
             this.label1.TabIndex = 9;
             this.label1.Text = "Flag Test";
             this.label1.Click += new System.EventHandler(this.Page1_Load);
@@ -170,9 +193,9 @@
             // 
             this.listView1.Columns.AddRange(new Wisej.Web.ColumnHeader[] {
             columnHeader1});
-            this.listView1.Location = new System.Drawing.Point(1022, 170);
+            this.listView1.Location = new System.Drawing.Point(1011, 187);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(518, 525);
+            this.listView1.Size = new System.Drawing.Size(288, 227);
             this.listView1.TabIndex = 11;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
@@ -188,9 +211,9 @@
             // menuBar1
             // 
             this.menuBar1.Dock = Wisej.Web.DockStyle.Bottom;
-            this.menuBar1.Location = new System.Drawing.Point(0, 695);
+            this.menuBar1.Location = new System.Drawing.Point(0, 778);
             this.menuBar1.Name = "menuBar1";
-            this.menuBar1.Size = new System.Drawing.Size(2043, 40);
+            this.menuBar1.Size = new System.Drawing.Size(2295, 28);
             this.menuBar1.TabIndex = 13;
             this.menuBar1.TabStop = false;
             this.menuBar1.Click += new System.EventHandler(this.menuBar1_Click);
@@ -204,11 +227,20 @@
             this.open_window.Text = "Open Window";
             this.open_window.Click += new System.EventHandler(this.button8_Click);
             // 
+            // treeView1
+            // 
+            this.treeView1.Location = new System.Drawing.Point(1011, 441);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(288, 244);
+            this.treeView1.TabIndex = 14;
+            this.treeView1.AfterSelect += new Wisej.Web.TreeViewEventHandler(this.treeView1_AfterSelect);
+            // 
             // Page1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
             this.Controls.Add(this.open_window);
+            this.Controls.Add(this.treeView1);
             this.Controls.Add(this.menuBar1);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.listView1);
@@ -221,7 +253,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Name = "Page1";
-            this.Size = new System.Drawing.Size(1323, 505);
+            this.Size = new System.Drawing.Size(2295, 806);
             this.Load += new System.EventHandler(this.Page1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -249,6 +281,9 @@
         private Wisej.Web.MenuBar menuBar1;
         private Wisej.Web.ToolTip toolTip1;
         private Wisej.Web.Button open_window;
+        private Wisej.Web.TreeView treeView1;
+        private Wisej.Web.TreeViewComboBox treeViewComboBox1;
+        private Wisej.Web.MenuBar menuBar2;
     }
 }
 

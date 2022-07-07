@@ -24,7 +24,6 @@ namespace crud_wisej_prototipe
         
         public int RetornaNumerosQuery()
         {
-            int total = 0;
             var selectCmd = dal.AbreConexao().CreateCommand();
             selectCmd.CommandText = "select * from lucknumber";
 

@@ -5,6 +5,7 @@ namespace crud_wisej_prototipe
 {
     public class MetodosAuxiliares
     {
+
         public DateTime DataTempoAgora()
         {
 
@@ -18,10 +19,6 @@ namespace crud_wisej_prototipe
 
             return dataTratada;
 
-
         }
-
-
     }
-
 }
