@@ -80,7 +80,7 @@
             // 
             this.menuBar2.Location = new System.Drawing.Point(1166, 24);
             this.menuBar2.Name = "menuBar2";
-            this.menuBar2.Size = new System.Drawing.Size(87, 28);
+            this.menuBar2.Size = new System.Drawing.Size(87, 40);
             this.menuBar2.TabIndex = 15;
             this.menuBar2.TabStop = false;
             this.menuBar2.Click += new System.EventHandler(this.menuBar2_Click);
@@ -90,24 +90,26 @@
             this.treeViewComboBox1.Anchor = Wisej.Web.AnchorStyles.Left;
             this.treeViewComboBox1.Location = new System.Drawing.Point(1021, 34);
             this.treeViewComboBox1.Name = "treeViewComboBox1";
-            this.treeViewComboBox1.Size = new System.Drawing.Size(91, 22);
+            this.treeViewComboBox1.Size = new System.Drawing.Size(91, 30);
             this.treeViewComboBox1.TabIndex = 15;
             this.treeViewComboBox1.SelectedItemChanged += new System.EventHandler(this.treeViewComboBox1_SelectedItemChanged);
             // 
             // button6
             // 
+            this.button6.ImageSource = "icon-refresh";
             this.button6.Location = new System.Drawing.Point(51, 21);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(100, 37);
+            this.button6.Size = new System.Drawing.Size(55, 43);
             this.button6.TabIndex = 13;
-            this.button6.Text = "Atualiza Sistema";
-            this.button6.Click += new System.EventHandler(this.Page1_Load);
+            this.button6.TextImageRelation = Wisej.Web.TextImageRelation.Overlay;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // Botao_Auxiliar
             // 
+            this.Botao_Auxiliar.ImageSource = "icon-settings";
             this.Botao_Auxiliar.Location = new System.Drawing.Point(179, 21);
             this.Botao_Auxiliar.Name = "Botao_Auxiliar";
-            this.Botao_Auxiliar.Size = new System.Drawing.Size(100, 37);
+            this.Botao_Auxiliar.Size = new System.Drawing.Size(96, 43);
             this.Botao_Auxiliar.TabIndex = 11;
             this.Botao_Auxiliar.Text = "Auxiliar";
             this.Botao_Auxiliar.Click += new System.EventHandler(this.button6_Click);
@@ -117,22 +119,24 @@
             this.comboBox1.LabelText = "Recover";
             this.comboBox1.Location = new System.Drawing.Point(1316, 11);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(120, 42);
+            this.comboBox1.Size = new System.Drawing.Size(120, 53);
             this.comboBox1.TabIndex = 9;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromName("@info");
-            this.button1.Location = new System.Drawing.Point(52, 606);
+            this.button1.ImageSource = "messagebox-warning";
+            this.button1.Location = new System.Drawing.Point(64, 630);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 37);
+            this.button1.Size = new System.Drawing.Size(177, 55);
             this.button1.TabIndex = 1;
             this.button1.Text = "Numero da Sorte :3";
             this.button1.Click += new System.EventHandler(this.Botao_GeraNumeroSorte);
             // 
             // data_sorte
             // 
+            this.data_sorte.ImageSource = "node-closed";
             this.data_sorte.Location = new System.Drawing.Point(52, 244);
             this.data_sorte.Name = "data_sorte";
             this.data_sorte.Size = new System.Drawing.Size(163, 37);
@@ -142,6 +146,7 @@
             // 
             // popula_database
             // 
+            this.popula_database.ImageSource = "node-closed";
             this.popula_database.Location = new System.Drawing.Point(52, 310);
             this.popula_database.Name = "popula_database";
             this.popula_database.Size = new System.Drawing.Size(163, 35);
@@ -152,6 +157,7 @@
             // testa_conexao
             // 
             this.testa_conexao.AutoSize = true;
+            this.testa_conexao.ImageSource = "table-row-indicator";
             this.testa_conexao.Location = new System.Drawing.Point(52, 441);
             this.testa_conexao.Name = "testa_conexao";
             this.testa_conexao.Size = new System.Drawing.Size(163, 37);
@@ -161,6 +167,7 @@
             // 
             // salva_txt
             // 
+            this.salva_txt.ImageSource = "node-closed";
             this.salva_txt.Location = new System.Drawing.Point(52, 511);
             this.salva_txt.Name = "salva_txt";
             this.salva_txt.Size = new System.Drawing.Size(163, 37);
@@ -171,6 +178,7 @@
             // button7
             // 
             this.button7.AutoSize = true;
+            this.button7.ImageSource = "table-row-indicator";
             this.button7.Location = new System.Drawing.Point(52, 377);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(163, 37);
@@ -184,7 +192,7 @@
             this.label1.Font = new System.Drawing.Font("@defaultBold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label1.Location = new System.Drawing.Point(316, 187);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 15);
+            this.label1.Size = new System.Drawing.Size(59, 18);
             this.label1.TabIndex = 9;
             this.label1.Text = "Flag Test";
             this.label1.Click += new System.EventHandler(this.Page1_Load);
@@ -211,15 +219,16 @@
             // menuBar1
             // 
             this.menuBar1.Dock = Wisej.Web.DockStyle.Bottom;
-            this.menuBar1.Location = new System.Drawing.Point(0, 778);
+            this.menuBar1.Location = new System.Drawing.Point(0, 936);
             this.menuBar1.Name = "menuBar1";
-            this.menuBar1.Size = new System.Drawing.Size(2295, 28);
+            this.menuBar1.Size = new System.Drawing.Size(2043, 40);
             this.menuBar1.TabIndex = 13;
             this.menuBar1.TabStop = false;
             this.menuBar1.Click += new System.EventHandler(this.menuBar1_Click);
             // 
             // open_window
             // 
+            this.open_window.ImageSource = "node-closed";
             this.open_window.Location = new System.Drawing.Point(52, 178);
             this.open_window.Name = "open_window";
             this.open_window.Size = new System.Drawing.Size(163, 36);
@@ -237,7 +246,7 @@
             // 
             // Page1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
             this.Controls.Add(this.open_window);
             this.Controls.Add(this.treeView1);
@@ -253,7 +262,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Name = "Page1";
-            this.Size = new System.Drawing.Size(2295, 806);
+            this.Size = new System.Drawing.Size(1930, 955);
             this.Load += new System.EventHandler(this.Page1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

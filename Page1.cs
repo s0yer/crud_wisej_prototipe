@@ -15,7 +15,8 @@ namespace crud_wisej_prototipe
         private const string V = "Teste de atribuicao";
         int num = 0;
         int luck_max = 0;
-        string[] luckcar = { "Volvo", "BMW", "Ford", "Mazda" };
+        string[] luckcar = { "Volvo", "BMW", "Ford", "Mazda", "Fiat" };
+        string[] cores = { "blue", "red", "green", "yellow", "purple" };
 
         Luck luck = new Luck();
         MetodosAuxiliares metodosAuxiliares = new MetodosAuxiliares();
@@ -23,18 +24,18 @@ namespace crud_wisej_prototipe
 
         public Page1()
         {
+
             InitializeComponent();
         }
 
         // botao auxiliar para teste
         private void button6_Click(object sender, EventArgs e)
         {
-            //botao para testar metodos 
-            //metodosAuxiliares.DataTempoAgora();
-            //basicDAL.TestaConexao();
-            //luckDTO.ConversorLista();
-            //uckDTO.InsercaoRandom();
-            luckDTO.InsercaoRandom();
+            dataGridView2.DataSource = luckDTO.RecuperaListaNumeros();
+            listView1.DataSource = luckDTO.RecuperaListaNumeros();
+            comboBox1.DataSource = luckcar;
+            this.label1.Text = luckDTO.RetornaQtdNumeros().ToString();
+
         }
 
         private void Botao_GeraNumeroSorte(object sender, EventArgs e)
@@ -93,6 +94,13 @@ namespace crud_wisej_prototipe
             comboBox1.DataSource = luckcar;
             this.label1.Text = luckDTO.RetornaQtdNumeros().ToString();
 
+            // popula treeview
+
+            foreach (var luck in luckcar)
+            {
+                treeView1.Nodes.Add(new TreeNode(luck));
+                treeView1.CheckBoxes = false;
+            }
             //popula treeviewcombo
 
             //foreach (var luck in luckcar)
@@ -106,14 +114,9 @@ namespace crud_wisej_prototipe
             //}
 
 
-            // popula treeview
-            foreach (var luck in luckcar)
-            {
-                treeView1.Nodes.Add(new TreeNode(luck));
-            }            
-            
 
-            
+
+
 
             //comboBox1.DataSource = basicDAL.RecuperaListaNumeros();
         }
