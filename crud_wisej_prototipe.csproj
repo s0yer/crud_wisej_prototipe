@@ -60,6 +60,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="System.Text.Json" Version="6.0.5" />
     <PackageReference Include="Wisej-3" Version="3.*-*" />
+    <PackageReference Include="Wisej-3-ChartJS" Version="3.0.11" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">

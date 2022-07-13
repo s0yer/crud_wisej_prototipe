@@ -37,6 +37,21 @@ namespace crud_wisej_prototipe
             return resultado;
         }
 
+        public int RetornaApenasNumeros()
+        {
+            var selectCmd = dal.AbreConexao().CreateCommand();
+            selectCmd.CommandText = "SELECT numero FROM lucknumber";
+
+            //var resultado = selectCmd.ExecuteNonQuery();
+            var resultado = selectCmd.ExecuteNonQuery();
+            //listBox1.DataSource = selectCmd.ExecuteNonQuery();
+
+            //total = Convert.ToBase64String(resultado);
+            //total = resultado.ToString();
+
+            return resultado;
+        }
+
         public void InsercaoRandom()
         {
             try

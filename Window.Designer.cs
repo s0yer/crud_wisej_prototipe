@@ -28,39 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.canvas1 = new Wisej.Web.Canvas();
-            this.iFramePanel1 = new Wisej.Web.IFramePanel();
-            this.shape1 = new Wisej.Web.Shape();
+            this.components = new System.ComponentModel.Container();
+            this.colorDialog1 = new Wisej.Web.ColorDialog(this.components);
+            this.chartJS1 = new Wisej.Web.Ext.ChartJS.ChartJS();
             this.SuspendLayout();
             // 
-            // canvas1
+            // chartJS1
             // 
-            this.canvas1.Location = new System.Drawing.Point(34, 18);
-            this.canvas1.Name = "canvas1";
-            this.canvas1.Size = new System.Drawing.Size(150, 87);
-            // 
-            // iFramePanel1
-            // 
-            this.iFramePanel1.Location = new System.Drawing.Point(575, 18);
-            this.iFramePanel1.Name = "iFramePanel1";
-            this.iFramePanel1.Size = new System.Drawing.Size(136, 87);
-            this.iFramePanel1.TabIndex = 1;
-            this.iFramePanel1.Text = "iFramePanel1";
-            // 
-            // shape1
-            // 
-            this.shape1.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom) 
-            | Wisej.Web.AnchorStyles.Left)));
-            this.shape1.Location = new System.Drawing.Point(285, 151);
-            this.shape1.Name = "shape1";
-            this.shape1.Size = new System.Drawing.Size(159, 111);
+            this.chartJS1.Location = new System.Drawing.Point(141, 67);
+            this.chartJS1.Name = "chartJS1";
+            this.chartJS1.Options.DataLabel.BackgroundColor = System.Drawing.Color.Empty;
+            this.chartJS1.Options.DataLabel.BorderColor = System.Drawing.Color.Empty;
+            this.chartJS1.Options.DataLabel.Color = System.Drawing.Color.Black;
+            this.chartJS1.Options.DataLabel.Opacity = 1F;
+            this.chartJS1.Options.DataLabel.TextAlign = Wisej.Web.Ext.ChartJS.DataLabelTextAlignment.Start;
+            this.chartJS1.Options.DataLabel.TextShadowColor = System.Drawing.Color.Empty;
+            this.chartJS1.Options.DataLabel.TextStrokeColor = System.Drawing.Color.Empty;
+            this.chartJS1.Size = new System.Drawing.Size(438, 327);
+            this.chartJS1.TabIndex = 0;
+            this.chartJS1.Text = "chartJS1";
+            this.chartJS1.ChartClick += new Wisej.Web.Ext.ChartJS.ChartClickEventHandler(this.chartJS1_ChartClick);
             // 
             // Window
             // 
-            this.ClientSize = new System.Drawing.Size(749, 453);
-            this.Controls.Add(this.shape1);
-            this.Controls.Add(this.iFramePanel1);
-            this.Controls.Add(this.canvas1);
+            this.ClientSize = new System.Drawing.Size(750, 537);
+            this.Controls.Add(this.chartJS1);
             this.Name = "Window";
             this.Text = "Window";
             this.Load += new System.EventHandler(this.Window_Load);
@@ -70,8 +62,7 @@
 
         #endregion
 
-        private Wisej.Web.Canvas canvas1;
-        private Wisej.Web.IFramePanel iFramePanel1;
-        private Wisej.Web.Shape shape1;
+        private Wisej.Web.ColorDialog colorDialog1;
+        private Wisej.Web.Ext.ChartJS.ChartJS chartJS1;
     }
 }

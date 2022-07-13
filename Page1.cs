@@ -17,6 +17,7 @@ namespace crud_wisej_prototipe
         int luck_max = 0;
         string[] luckcar = { "Volvo", "BMW", "Ford", "Mazda", "Fiat" };
         string[] cores = { "blue", "red", "green", "yellow", "purple" };
+        string[] assets = { "bbas3", "cash3", "green", "yellow", "purple" };
 
         Luck luck = new Luck();
         MetodosAuxiliares metodosAuxiliares = new MetodosAuxiliares();
@@ -94,6 +95,7 @@ namespace crud_wisej_prototipe
             comboBox1.DataSource = luckcar;
             this.label1.Text = luckDTO.RetornaQtdNumeros().ToString();
 
+            
             // popula treeview
 
             foreach (var luck in luckcar)
