@@ -62,7 +62,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromName("@controlDark");
+            this.panel1.BackColor = System.Drawing.Color.FromName("@activeCaption");
             this.panel1.BorderStyle = Wisej.Web.BorderStyle.Solid;
             this.panel1.Controls.Add(this.menuBar2);
             this.panel1.Controls.Add(this.treeViewComboBox1);
@@ -74,13 +74,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(2043, 90);
             this.panel1.TabIndex = 0;
+            this.panel1.PanelCollapsed += new System.EventHandler(this.panel1_PanelCollapsed);
             this.panel1.Click += new System.EventHandler(this.Page1_Load);
             // 
             // menuBar2
             // 
-            this.menuBar2.Location = new System.Drawing.Point(1166, 24);
+            this.menuBar2.Location = new System.Drawing.Point(1132, 24);
             this.menuBar2.Name = "menuBar2";
-            this.menuBar2.Size = new System.Drawing.Size(87, 40);
+            this.menuBar2.Size = new System.Drawing.Size(87, 28);
             this.menuBar2.TabIndex = 15;
             this.menuBar2.TabStop = false;
             this.menuBar2.Click += new System.EventHandler(this.menuBar2_Click);
@@ -88,9 +89,9 @@
             // treeViewComboBox1
             // 
             this.treeViewComboBox1.Anchor = Wisej.Web.AnchorStyles.Left;
-            this.treeViewComboBox1.Location = new System.Drawing.Point(1021, 34);
+            this.treeViewComboBox1.Location = new System.Drawing.Point(964, 31);
             this.treeViewComboBox1.Name = "treeViewComboBox1";
-            this.treeViewComboBox1.Size = new System.Drawing.Size(91, 30);
+            this.treeViewComboBox1.Size = new System.Drawing.Size(91, 22);
             this.treeViewComboBox1.TabIndex = 15;
             this.treeViewComboBox1.SelectedItemChanged += new System.EventHandler(this.treeViewComboBox1_SelectedItemChanged);
             // 
@@ -117,17 +118,17 @@
             // comboBox1
             // 
             this.comboBox1.LabelText = "Recover";
-            this.comboBox1.Location = new System.Drawing.Point(1316, 11);
+            this.comboBox1.Location = new System.Drawing.Point(1300, 8);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(120, 53);
+            this.comboBox1.Size = new System.Drawing.Size(120, 42);
             this.comboBox1.TabIndex = 9;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromName("@info");
+            this.button1.BackColor = System.Drawing.Color.FromName("@success");
             this.button1.ImageSource = "messagebox-warning";
-            this.button1.Location = new System.Drawing.Point(64, 630);
+            this.button1.Location = new System.Drawing.Point(52, 630);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(177, 55);
             this.button1.TabIndex = 1;
@@ -158,7 +159,7 @@
             // 
             this.testa_conexao.AutoSize = true;
             this.testa_conexao.ImageSource = "table-row-indicator";
-            this.testa_conexao.Location = new System.Drawing.Point(52, 441);
+            this.testa_conexao.Location = new System.Drawing.Point(52, 504);
             this.testa_conexao.Name = "testa_conexao";
             this.testa_conexao.Size = new System.Drawing.Size(163, 37);
             this.testa_conexao.TabIndex = 5;
@@ -168,11 +169,12 @@
             // salva_txt
             // 
             this.salva_txt.ImageSource = "node-closed";
-            this.salva_txt.Location = new System.Drawing.Point(52, 511);
+            this.salva_txt.Location = new System.Drawing.Point(52, 441);
             this.salva_txt.Name = "salva_txt";
             this.salva_txt.Size = new System.Drawing.Size(163, 37);
             this.salva_txt.TabIndex = 6;
             this.salva_txt.Text = "Salva Dados";
+            this.salva_txt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.salva_txt.Click += new System.EventHandler(this.Botao_SalvaTxt);
             // 
             // button7
@@ -189,16 +191,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("@defaultBold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label1.Location = new System.Drawing.Point(316, 187);
+            this.label1.Font = new System.Drawing.Font("defaultBold, Impact", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label1.Location = new System.Drawing.Point(367, 134);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 18);
+            this.label1.Size = new System.Drawing.Size(69, 17);
             this.label1.TabIndex = 9;
             this.label1.Text = "Flag Test";
             this.label1.Click += new System.EventHandler(this.Page1_Load);
             // 
             // listView1
             // 
+            this.listView1.BackColor = System.Drawing.Color.FromName("@table-row-background-focused-selected");
             this.listView1.Columns.AddRange(new Wisej.Web.ColumnHeader[] {
             columnHeader1});
             this.listView1.Location = new System.Drawing.Point(1011, 187);
@@ -210,18 +213,19 @@
             // dataGridView2
             // 
             this.dataGridView2.AllowUserToDeleteRows = true;
-            this.dataGridView2.Location = new System.Drawing.Point(316, 231);
+            this.dataGridView2.BackColor = System.Drawing.Color.FromName("@desktop");
+            this.dataGridView2.Location = new System.Drawing.Point(367, 187);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(620, 454);
+            this.dataGridView2.Size = new System.Drawing.Size(496, 363);
             this.dataGridView2.TabIndex = 12;
             this.dataGridView2.Click += new System.EventHandler(this.dataGridView2_Click);
             // 
             // menuBar1
             // 
             this.menuBar1.Dock = Wisej.Web.DockStyle.Bottom;
-            this.menuBar1.Location = new System.Drawing.Point(0, 685);
+            this.menuBar1.Location = new System.Drawing.Point(0, 806);
             this.menuBar1.Name = "menuBar1";
-            this.menuBar1.Size = new System.Drawing.Size(2043, 40);
+            this.menuBar1.Size = new System.Drawing.Size(2295, 28);
             this.menuBar1.TabIndex = 13;
             this.menuBar1.TabStop = false;
             this.menuBar1.Click += new System.EventHandler(this.menuBar1_Click);
@@ -238,6 +242,7 @@
             // 
             // treeView1
             // 
+            this.treeView1.BackColor = System.Drawing.Color.FromName("@table-row-background-focused-selected");
             this.treeView1.Location = new System.Drawing.Point(1011, 441);
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(288, 244);
@@ -246,8 +251,9 @@
             // 
             // Page1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromName("@iconDark");
             this.Controls.Add(this.open_window);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.menuBar1);
@@ -262,7 +268,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Name = "Page1";
-            this.Size = new System.Drawing.Size(1160, 718);
+            this.Size = new System.Drawing.Size(2295, 834);
             this.Load += new System.EventHandler(this.Page1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

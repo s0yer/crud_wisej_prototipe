@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.colorDialog1 = new Wisej.Web.ColorDialog(this.components);
             this.chartJS1 = new Wisej.Web.Ext.ChartJS.ChartJS();
+            this.pictureBox1 = new Wisej.Web.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // chartJS1
@@ -46,16 +48,26 @@
             this.chartJS1.Options.DataLabel.TextStrokeColor = System.Drawing.Color.Empty;
             this.chartJS1.Size = new System.Drawing.Size(438, 327);
             this.chartJS1.TabIndex = 0;
-            this.chartJS1.Text = "chartJS1";
+            this.chartJS1.Text = "Numeros Aleatorios";
             this.chartJS1.ChartClick += new Wisej.Web.Ext.ChartJS.ChartClickEventHandler(this.chartJS1_ChartClick);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(630, 342);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(8, 8);
             // 
             // Window
             // 
+            this.BackColor = System.Drawing.Color.FromArgb(253, 244, 242, 186);
             this.ClientSize = new System.Drawing.Size(750, 537);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.chartJS1);
+            this.HeaderBackColor = System.Drawing.Color.FromName("@focusFrame");
             this.Name = "Window";
             this.Text = "Window";
             this.Load += new System.EventHandler(this.Window_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -64,5 +76,6 @@
 
         private Wisej.Web.ColorDialog colorDialog1;
         private Wisej.Web.Ext.ChartJS.ChartJS chartJS1;
+        private Wisej.Web.PictureBox pictureBox1;
     }
 }

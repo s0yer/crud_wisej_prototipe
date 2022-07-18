@@ -1,7 +1,9 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Data;
 using System.Collections.Generic;
 using Wisej.Web;
+using Wisej.Web.Ext.ChartJS;
 
 namespace crud_wisej_prototipe
 {
@@ -22,35 +24,51 @@ namespace crud_wisej_prototipe
             return total;
         }        
         
-        public int RetornaNumerosQuery()
+        public System.Data.DataSet RetornaDatasetWiseJ()
         {
-            var selectCmd = dal.AbreConexao().CreateCommand();
-            selectCmd.CommandText = "select * from lucknumber";
+            BasicDAL basicDAL = new BasicDAL();
 
-            //var resultado = selectCmd.ExecuteNonQuery();
-            var resultado = selectCmd.ExecuteNonQuery();
-            //listBox1.DataSource = selectCmd.ExecuteNonQuery();
+            // comandos recuperam uma coluna apenas
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            adapter.TableMappings.Add("Table", "lucknum");
 
-            //total = Convert.ToBase64String(resultado);
-            //total = resultado.ToString();
 
-            return resultado;
-        }
+            MySqlCommand command = new MySqlCommand(
+           "SELECT SupplierID, CompanyName FROM dbo.Suppliers;",
+           basicDAL.AbreConexao());
+            command.CommandType = CommandType.Text;
 
-        public int RetornaApenasNumeros()
-        {
-            var selectCmd = dal.AbreConexao().CreateCommand();
-            selectCmd.CommandText = "SELECT numero FROM lucknumber";
+            adapter.SelectCommand = command;
 
-            //var resultado = selectCmd.ExecuteNonQuery();
-            var resultado = selectCmd.ExecuteNonQuery();
-            //listBox1.DataSource = selectCmd.ExecuteNonQuery();
+            System.Data.DataSet ds = new System.Data.DataSet("lucknum");
+            adapter.Fill(ds);
 
-            //total = Convert.ToBase64String(resultado);
-            //total = resultado.ToString();
+            return ds;
+        }        
+        
+        //public DataSet RetornaDataset()
+        //{
+        //    BasicDAL basicDAL = new BasicDAL();
 
-            return resultado;
-        }
+        //    // comandos recuperam uma coluna apenas
+        //    MySqlDataAdapter adapter = new MySqlDataAdapter();
+        //    adapter.TableMappings.Add("Table", "lucknum");
+
+
+        //    MySqlCommand command = new MySqlCommand(
+        //   "SELECT SupplierID, CompanyName FROM dbo.Suppliers;",
+        //   basicDAL.AbreConexao());
+        //    command.CommandType = CommandType.Text;
+
+        //    adapter.SelectCommand = command;
+
+        //    DataSet ds = new DataSet("lucknum");
+        //    adapter.Fill(ds);
+
+        //    return ds;
+        //}
+
+
 
         public void InsercaoRandom()
         {
@@ -128,6 +146,7 @@ namespace crud_wisej_prototipe
                 MessageBox.Show(ex.Message);
             }
         }
+
         // necessita da biblioteca using System.Collections.Generic;
         internal IList<Luck> RecuperaListaNumeros()
         {

@@ -168,6 +168,11 @@ namespace crud_wisej_prototipe
         {
 
         }
+
+        private void panel1_PanelCollapsed(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

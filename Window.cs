@@ -16,21 +16,11 @@ namespace crud_wisej_prototipe
 
         private void Window_Load(object sender, EventArgs e)
         {
-            BasicDAL basicDAL = new BasicDAL();
-            basicDAL.AbreConexao();
-
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
-            adapter.TableMappings.Add("Table", "lucknum");
-
-            DataSet ds = new DataSet("lucknum");
-           // DataTable dt = new DataTable();
             LuckDTO luckDTO = new LuckDTO();
-           // dt.Columns.Add(luckDTO.RecuperaListaNumeros());
-            //dt.Columns.Add(luckDTO.RecuperaListaNumeros());
-            ds.Data = luckDTO.RecuperaListaNumeros();
-            ds.Data(luckDTO.RecuperaListaNumeros());
+            
 
-           // Randomize2();
+            //chartJS1.DataSets.Add(luckDTO.RetornaDataset());
+            // Randomize2();
         }
 
         private void chartJS1_ChartClick(object sender, ChartClickEventArgs e)
