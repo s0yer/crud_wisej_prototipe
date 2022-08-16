@@ -15,6 +15,9 @@
                     num.Id, num.numero);
             }
             Console.ReadKey();
+
+            Console.WriteLine("----------- end -------------");
+
         }
     }
 }
