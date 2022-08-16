@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,11 @@ namespace ConsultasLinq.Data
 {
     internal class ConsultaContext: DbContext
     {
+        public ConsultaContext(DbSet<Luck> lucks)
+        {
+            Lucks = lucks;
+        }
+
         public DbSet<Luck> Lucks { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
