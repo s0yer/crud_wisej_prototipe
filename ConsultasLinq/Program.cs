@@ -9,9 +9,12 @@ namespace ConsultasLinq
         {
             Console.WriteLine("----------- start -------------");
 
-            using(var contexto = new Luck())
-            {
-                var query = from numero in contexto.Lucks
+
+            var listluck = new List<Luck>();    
+            
+            //using (var contexto = lucks)
+            //{
+                var query = from numero in listluck
                             select numero;
 
                 foreach (var num in query)
@@ -19,7 +22,7 @@ namespace ConsultasLinq
                     Console.WriteLine("{0}\t{1}",
                         num.Id, num.numero);
                 }
-            }
+            //}
 
             Console.ReadKey();
 
