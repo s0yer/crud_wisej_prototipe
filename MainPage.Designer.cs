@@ -1,6 +1,6 @@
 ﻿namespace crud_wisej_prototipe
 {
-    partial class Page1
+    partial class MainPage
     {
         /// <summary>
         /// Required designer variable.
@@ -223,9 +223,9 @@
             // menuBar1
             // 
             this.menuBar1.Dock = Wisej.Web.DockStyle.Bottom;
-            this.menuBar1.Location = new System.Drawing.Point(0, 806);
+            this.menuBar1.Location = new System.Drawing.Point(0, 685);
             this.menuBar1.Name = "menuBar1";
-            this.menuBar1.Size = new System.Drawing.Size(2295, 28);
+            this.menuBar1.Size = new System.Drawing.Size(2043, 28);
             this.menuBar1.TabIndex = 13;
             this.menuBar1.TabStop = false;
             this.menuBar1.Click += new System.EventHandler(this.menuBar1_Click);
@@ -268,7 +268,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Name = "Page1";
-            this.Size = new System.Drawing.Size(2295, 834);
+            this.Size = new System.Drawing.Size(1402, 460);
             this.Load += new System.EventHandler(this.Page1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

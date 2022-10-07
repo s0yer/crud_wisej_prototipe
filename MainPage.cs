@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 namespace crud_wisej_prototipe
 {
-    public partial class Page1 : Page
+    public partial class MainPage : Page
     {
         private const string V = "Teste de atribuicao";
         int num = 0;
@@ -23,7 +23,7 @@ namespace crud_wisej_prototipe
         MetodosAuxiliares metodosAuxiliares = new MetodosAuxiliares();
         LuckDTO luckDTO = new LuckDTO();
 
-        public Page1()
+        public MainPage()
         {
 
             InitializeComponent();
