@@ -249,7 +249,7 @@
             this.treeView1.TabIndex = 14;
             this.treeView1.AfterSelect += new Wisej.Web.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
-            // Page1
+            // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
@@ -267,8 +267,8 @@
             this.Controls.Add(this.data_sorte);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
-            this.Name = "Page1";
-            this.Size = new System.Drawing.Size(1402, 460);
+            this.Name = "MainPage";
+            this.Size = new System.Drawing.Size(1105, 573);
             this.Load += new System.EventHandler(this.Page1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
