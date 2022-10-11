@@ -57,6 +57,7 @@ namespace crud_wisej_prototipe
         public void Dispose()
         {
             this.conexao.Close();
+            this.conexao.Dispose();
         }
 
     internal void Adicionar(Luck lu)
