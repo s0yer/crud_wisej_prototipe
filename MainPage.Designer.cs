@@ -62,6 +62,8 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Left) 
+            | Wisej.Web.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromName("@activeCaption");
             this.panel1.BorderStyle = Wisej.Web.BorderStyle.Solid;
             this.panel1.Controls.Add(this.menuBar2);
@@ -70,9 +72,9 @@
             this.panel1.Controls.Add(this.Botao_Auxiliar);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.HeaderSize = 34;
-            this.panel1.Location = new System.Drawing.Point(0, 3);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(2043, 90);
+            this.panel1.Size = new System.Drawing.Size(1442, 90);
             this.panel1.TabIndex = 0;
             this.panel1.PanelCollapsed += new System.EventHandler(this.panel1_PanelCollapsed);
             this.panel1.Click += new System.EventHandler(this.Page1_Load);
@@ -81,7 +83,7 @@
             // 
             this.menuBar2.Location = new System.Drawing.Point(1132, 24);
             this.menuBar2.Name = "menuBar2";
-            this.menuBar2.Size = new System.Drawing.Size(87, 28);
+            this.menuBar2.Size = new System.Drawing.Size(87, 40);
             this.menuBar2.TabIndex = 15;
             this.menuBar2.TabStop = false;
             this.menuBar2.Click += new System.EventHandler(this.menuBar2_Click);
@@ -91,7 +93,7 @@
             this.treeViewComboBox1.Anchor = Wisej.Web.AnchorStyles.Left;
             this.treeViewComboBox1.Location = new System.Drawing.Point(964, 31);
             this.treeViewComboBox1.Name = "treeViewComboBox1";
-            this.treeViewComboBox1.Size = new System.Drawing.Size(91, 22);
+            this.treeViewComboBox1.Size = new System.Drawing.Size(91, 30);
             this.treeViewComboBox1.TabIndex = 15;
             this.treeViewComboBox1.SelectedItemChanged += new System.EventHandler(this.treeViewComboBox1_SelectedItemChanged);
             // 
@@ -120,7 +122,7 @@
             this.comboBox1.LabelText = "Recover";
             this.comboBox1.Location = new System.Drawing.Point(1300, 8);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(120, 42);
+            this.comboBox1.Size = new System.Drawing.Size(120, 53);
             this.comboBox1.TabIndex = 9;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -225,7 +227,7 @@
             this.menuBar1.Dock = Wisej.Web.DockStyle.Bottom;
             this.menuBar1.Location = new System.Drawing.Point(0, 685);
             this.menuBar1.Name = "menuBar1";
-            this.menuBar1.Size = new System.Drawing.Size(2043, 28);
+            this.menuBar1.Size = new System.Drawing.Size(1473, 40);
             this.menuBar1.TabIndex = 13;
             this.menuBar1.TabStop = false;
             this.menuBar1.Click += new System.EventHandler(this.menuBar1_Click);
@@ -251,7 +253,7 @@
             // 
             // MainPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromName("@iconDark");
             this.Controls.Add(this.open_window);
@@ -268,7 +270,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Name = "MainPage";
-            this.Size = new System.Drawing.Size(1105, 573);
+            this.Size = new System.Drawing.Size(1452, 561);
             this.Load += new System.EventHandler(this.Page1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

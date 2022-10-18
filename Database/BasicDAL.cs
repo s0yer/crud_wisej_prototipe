@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Utilities.Encoders;
 using System;
+using System.Buffers.Text;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Text;
@@ -39,21 +40,21 @@ namespace crud_wisej_prototipe
         //public MySqlConnection AbreConexao(ConnectionStringSettings connectionString)
         public MySqlConnection AbreConexao()
         {
-            this.conexao = new MySqlConnection("server=localhost;database=mydb;uid=root;password=123456;port=3306;");
 
-
+            //this.conexao = new MySqlConnection("server=localhost;database=mydb;uid=root;password=123456;port=3306;");
             //public static byte[] strConexao = Convert.FromBase64String("c2VydmVyPWxvY2FsaG9zdDtkYXRhYmFzZT1teWRiO3VpZD1yb290O3Bhc3N3b3JkPTEyMzQ1Njtwb3J0PTMzMDY7");
-            //this.conexao = new MySqlConnection(Encoding(strConexao));
+            public static byte[] strConexao = Encoding.Default.GetBytes("c2VydmVyPWxvY2FsaG9zdDtkYXRhYmFzZT1teWRiO3VpZD1yb290O3Bhc3N3b3JkPTEyMzQ1Njtwb3J0PTMzMDY7");
+            public string strDecode = Encoding.UTF8.GetString(strConexao);
+            //this.conexao = new MySqlConnection(Encoding.UTF8.GetString(strConexao));
+            this.conexao = new MySqlConnection(strDecode);
 
             //string connString = ConfigurationManager.ConnectionStrings[“database1”].ConnectionString;
             //this.conexao = new MySqlConnection("stringconnection?");
-            //root@localhost:3306
-            //jdbc:mysql://localhost:3306/?user=root
-            //jdbc:mysql://localhost:3306/?user=root
+            
 
             this.conexao.Open();
             //MessageBox.Show("Conexao aberta...");
-            Console.WriteLine("Conexao aberta...");
+            //Console.WriteLine("Conexao aberta...");
 
             return this.conexao;
         }
