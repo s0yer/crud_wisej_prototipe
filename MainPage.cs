@@ -28,6 +28,24 @@ namespace crud_wisej_prototipe
 
             InitializeComponent();
         }
+        // carrega pagina principal
+        private void Page1_Load(object sender, EventArgs e)
+        {
+
+            dataGridView2.DataSource = luckDTO.RecuperaListaNumeros();
+            listView1.DataSource = luckDTO.RecuperaListaNumeros();
+            comboBox1.DataSource = luckcar;
+            this.label1.Text = luckDTO.RetornaQtdNumeros().ToString();
+
+
+            // popula treeview
+
+            foreach (var luck in luckcar)
+            {
+                treeView1.Nodes.Add(new TreeNode(luck));
+                treeView1.CheckBoxes = false;
+            }
+        }
 
         // botao auxiliar para teste
         private void button6_Click(object sender, EventArgs e)
@@ -87,41 +105,7 @@ namespace crud_wisej_prototipe
             //Console.WriteLine(luckDTO.RecuperaListaNumeros());
         }
 
-        private void Page1_Load(object sender, EventArgs e)
-        {
 
-            dataGridView2.DataSource = luckDTO.RecuperaListaNumeros();
-            listView1.DataSource = luckDTO.RecuperaListaNumeros();
-            comboBox1.DataSource = luckcar;
-            this.label1.Text = luckDTO.RetornaQtdNumeros().ToString();
-
-            
-            // popula treeview
-
-            foreach (var luck in luckcar)
-            {
-                treeView1.Nodes.Add(new TreeNode(luck));
-                treeView1.CheckBoxes = false;
-            }
-            //popula treeviewcombo
-
-            //foreach (var luck in luckcar)
-            //{
-            //    treeViewComboBox1.Nodes.Add(new TreeNode(luck));
-            //}            
-
-            //foreach (var luck in luckcar)
-            //{
-            //    menuBar1.?(luck);
-            //}
-
-
-
-
-
-
-            //comboBox1.DataSource = basicDAL.RecuperaListaNumeros();
-        }
 
         private void label1_Click(object sender, EventArgs e)
         {
